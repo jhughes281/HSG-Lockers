@@ -1027,6 +1027,172 @@ footer{border-top:1px solid var(--border);padding:36px 40px;display:flex;align-i
 </div>
 </div>
 
+<!-- ══ TRASH RUNNERS SECTION ══ -->
+<div id="section-trash" class="page-section" style="display:none;">
+<style>
+.tr-hero{background:linear-gradient(135deg,#0a1628 0%,#0d2137 50%,#0a1e30 100%);padding:80px 60px 60px;text-align:center;border-bottom:1px solid rgba(0,196,161,0.15);}
+.tr-hero-badge{display:inline-block;background:rgba(0,196,161,0.12);border:1px solid rgba(0,196,161,0.3);color:#00C4A1;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:20px;}
+.tr-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;color:#fff;margin-bottom:16px;line-height:1.2;}
+.tr-hero h1 em{color:#00C4A1;font-style:normal;}
+.tr-hero p{font-size:1.1rem;color:rgba(255,255,255,0.65);max-width:640px;margin:0 auto 36px;}
+.tr-hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.tr-btn-primary{background:#00C4A1;color:#0a1628;font-weight:700;font-size:14px;padding:14px 28px;border:none;border-radius:8px;cursor:pointer;text-decoration:none;transition:background 0.2s;}
+.tr-btn-primary:hover{background:#00e0b8;}
+.tr-btn-outline{background:transparent;color:#00C4A1;font-weight:600;font-size:14px;padding:14px 28px;border:1.5px solid #00C4A1;border-radius:8px;cursor:pointer;text-decoration:none;transition:all 0.2s;}
+.tr-btn-outline:hover{background:rgba(0,196,161,0.08);}
+.tr-body{max-width:1100px;margin:0 auto;padding:60px 40px;}
+.tr-services{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-bottom:70px;}
+.tr-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:32px;transition:border-color 0.2s,transform 0.2s;}
+.tr-card:hover{border-color:rgba(0,196,161,0.35);transform:translateY(-3px);}
+.tr-card-icon{width:52px;height:52px;background:rgba(0,196,161,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px;}
+.tr-card h3{color:#fff;font-size:1.15rem;font-weight:700;margin-bottom:10px;}
+.tr-card p{color:rgba(255,255,255,0.6);font-size:14px;line-height:1.65;}
+.tr-card ul{list-style:none;padding:0;margin:12px 0 0;}
+.tr-card ul li{color:rgba(255,255,255,0.6);font-size:13px;padding:5px 0;border-top:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;gap:8px;}
+.tr-card ul li::before{content:"\2713";color:#00C4A1;font-weight:700;flex-shrink:0;}
+.tr-section-label{color:#00C4A1;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;}
+.tr-section-title{color:#fff;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;margin-bottom:14px;}
+.tr-section-sub{color:rgba(255,255,255,0.55);font-size:15px;max-width:560px;margin-bottom:40px;}
+.tr-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-bottom:70px;}
+.tr-step{text-align:center;padding:28px 20px;}
+.tr-step-num{width:44px;height:44px;background:linear-gradient(135deg,#00C4A1,#007a66);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;font-weight:800;margin:0 auto 16px;}
+.tr-step h4{color:#fff;font-size:1rem;font-weight:700;margin-bottom:8px;}
+.tr-step p{color:rgba(255,255,255,0.55);font-size:13px;line-height:1.6;}
+.tr-teen{background:linear-gradient(135deg,rgba(0,196,161,0.07),rgba(0,196,161,0.03));border:1px solid rgba(0,196,161,0.2);border-radius:16px;padding:48px;margin-bottom:70px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+@media(max-width:700px){.tr-teen{grid-template-columns:1fr;gap:28px;padding:32px 24px;}}
+.tr-teen-left h2{color:#fff;font-size:clamp(1.5rem,3vw,2rem);font-weight:800;margin-bottom:14px;line-height:1.3;}
+.tr-teen-left h2 em{color:#00C4A1;font-style:normal;}
+.tr-teen-left p{color:rgba(255,255,255,0.65);font-size:15px;line-height:1.7;margin-bottom:20px;}
+.tr-teen-benefits{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.tr-teen-benefit{background:rgba(255,255,255,0.04);border-radius:10px;padding:16px;}
+.tr-teen-benefit .tb-icon{font-size:22px;margin-bottom:8px;}
+.tr-teen-benefit h4{color:#fff;font-size:13px;font-weight:700;margin-bottom:4px;}
+.tr-teen-benefit p{color:rgba(255,255,255,0.55);font-size:12px;line-height:1.5;margin:0;}
+.tr-pm{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:40px;margin-bottom:60px;}
+.tr-pm h3{color:#fff;font-size:1.3rem;font-weight:700;margin-bottom:8px;}
+.tr-pm>p{color:rgba(255,255,255,0.6);font-size:14px;margin-bottom:28px;}
+.tr-pm-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
+.tr-pm-feat{display:flex;gap:12px;align-items:flex-start;}
+.tr-pm-feat-icon{width:36px;height:36px;background:rgba(0,196,161,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.tr-pm-feat-text h5{color:#fff;font-size:13px;font-weight:700;margin:0 0 4px;}
+.tr-pm-feat-text p{color:rgba(255,255,255,0.5);font-size:12px;line-height:1.5;margin:0;}
+.tr-cta-banner{background:linear-gradient(135deg,#00C4A1 0%,#007a66 100%);border-radius:16px;padding:48px;text-align:center;}
+.tr-cta-banner h2{color:#fff;font-size:1.8rem;font-weight:800;margin-bottom:12px;}
+.tr-cta-banner p{color:rgba(255,255,255,0.85);font-size:15px;margin-bottom:28px;}
+.tr-cta-banner a{background:#fff;color:#007a66;font-weight:700;font-size:15px;padding:14px 32px;border-radius:8px;text-decoration:none;transition:opacity 0.2s;}
+.tr-cta-banner a:hover{opacity:0.9;}
+</style>
+<div class="tr-hero">
+  <div class="tr-hero-badge">New Service</div>
+  <h1>Door-to-Door <em>Trash Runners</em></h1>
+  <p>We pick up trash right from residents' doors — scheduled, reliable, and staffed by people who already live in the community. Less hassle for residents. Less worry for property managers.</p>
+  <div class="tr-hero-ctas">
+    <a href="#" onclick="showSection('contact');return false;" class="tr-btn-primary">Get a Quote</a>
+    <a href="#" onclick="showSection('contact');return false;" class="tr-btn-outline">Schedule a Demo</a>
+  </div>
+</div>
+<div class="tr-body">
+  <div class="tr-section-label">Our Services</div>
+  <div class="tr-section-title">Flexible Pickup Options</div>
+  <p class="tr-section-sub">Property managers set the schedule. Residents relax. We handle the rest.</p>
+  <div class="tr-services">
+    <div class="tr-card">
+      <div class="tr-card-icon">&#x1F5D1;&#xFE0F;</div>
+      <h3>Scheduled Bi-Weekly Pickup</h3>
+      <p>Consistent, property-wide trash collection on a set schedule managed entirely through our platform. No reminders needed — residents just bag it and we take it.</p>
+      <ul>
+        <li>Set pickup days per property</li>
+        <li>Door-to-door collection each run</li>
+        <li>Property manager dashboard view</li>
+        <li>Resident notification alerts</li>
+      </ul>
+    </div>
+    <div class="tr-card">
+      <div class="tr-card-icon">&#x1F4E6;</div>
+      <h3>Heavy Trash Pickup</h3>
+      <p>Once-a-month removal of large or bulky items. Residents can leave items curbside or schedule a specific pickup window that works for them.</p>
+      <ul>
+        <li>Curbside drop or scheduled window</li>
+        <li>Flexible time slots (AM / PM / weekend)</li>
+        <li>Furniture, appliances, bulk items</li>
+        <li>Included in monthly service</li>
+      </ul>
+    </div>
+    <div class="tr-card">
+      <div class="tr-card-icon">&#x1F4F1;</div>
+      <h3>Resident Scheduling Portal</h3>
+      <p>Residents book heavy-trash pickups through a simple interface — choose a day and window that works, and our on-site runner shows up. No phone calls, no guessing.</p>
+      <ul>
+        <li>Self-service booking anytime</li>
+        <li>Choose AM / PM / weekend slot</li>
+        <li>Real-time confirmation</li>
+        <li>Easy reschedule or cancel</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tr-section-label">How It Works</div>
+  <div class="tr-section-title">Simple for Everyone</div>
+  <p class="tr-section-sub">From setup to collection — a smooth process for property managers and residents alike.</p>
+  <div class="tr-steps">
+    <div class="tr-step">
+      <div class="tr-step-num">1</div>
+      <h4>Property Manager Sets Schedule</h4>
+      <p>Choose bi-weekly pickup days and heavy-trash windows for your property. One-time setup, easy to update anytime.</p>
+    </div>
+    <div class="tr-step">
+      <div class="tr-step-num">2</div>
+      <h4>Residents Are Notified</h4>
+      <p>Residents get pickup day alerts and can self-schedule their heavy-trash window through the resident portal.</p>
+    </div>
+    <div class="tr-step">
+      <div class="tr-step-num">3</div>
+      <h4>On-Site Runner Collects</h4>
+      <p>Our community-based runner collects from each door on schedule and brings trash to the dumpster. No strangers needed.</p>
+    </div>
+    <div class="tr-step">
+      <div class="tr-step-num">4</div>
+      <h4>Property Stays Clean</h4>
+      <p>Hallways stay clear. Managers get completion reports. Residents enjoy the convenience.</p>
+    </div>
+  </div>
+  <div class="tr-teen">
+    <div class="tr-teen-left">
+      <div class="tr-section-label">The Workforce Model</div>
+      <h2>Teens in the <em>Community</em>, Working for the Community</h2>
+      <p>We hire teenagers who already live in the apartment complex as our on-site runners. It is not just a smart business decision — it creates real opportunity for young people right where they live.</p>
+      <p>Parents do not have to drive their kids to work. They can monitor from home. Property managers get a familiar face they already know, not a stranger walking the property.</p>
+    </div>
+    <div>
+      <div class="tr-teen-benefits">
+        <div class="tr-teen-benefit"><div class="tb-icon">&#x1F3E0;</div><h4>Already On Property</h4><p>No commute, no transport liability. The runner lives there.</p></div>
+        <div class="tr-teen-benefit"><div class="tb-icon">&#x1F440;</div><h4>Parent Can Monitor</h4><p>Parents watch from home. Total peace of mind for families.</p></div>
+        <div class="tr-teen-benefit"><div class="tb-icon">&#x1F512;</div><h4>Safer for Residents</h4><p>No unknown contractors. A familiar face the community trusts.</p></div>
+        <div class="tr-teen-benefit"><div class="tb-icon">&#x1F4B5;</div><h4>Real Earning Opportunity</h4><p>Summer money, school money, or just extra income for teens.</p></div>
+        <div class="tr-teen-benefit"><div class="tb-icon">&#x1F4CD;</div><h4>We Are on the Property</h4><p>Builds our presence to offer additional HSG services over time.</p></div>
+        <div class="tr-teen-benefit"><div class="tb-icon">&#x1F4BC;</div><h4>Low Labor Cost</h4><p>Lean staffing model keeps service affordable for properties.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="tr-pm">
+    <h3>Built for Property Managers</h3>
+    <p>Everything you need to set up, monitor, and manage the program without adding to your workload.</p>
+    <div class="tr-pm-features">
+      <div class="tr-pm-feat"><div class="tr-pm-feat-icon">&#x1F4C5;</div><div class="tr-pm-feat-text"><h5>Pickup Schedule Control</h5><p>Set bi-weekly pickup days and monthly heavy-trash windows per building or property-wide.</p></div></div>
+      <div class="tr-pm-feat"><div class="tr-pm-feat-icon">&#x1F4CA;</div><div class="tr-pm-feat-text"><h5>Completion Reports</h5><p>See when each run was completed, any skipped units, and monthly summary reports.</p></div></div>
+      <div class="tr-pm-feat"><div class="tr-pm-feat-icon">&#x1F514;</div><div class="tr-pm-feat-text"><h5>Resident Notifications</h5><p>Automated reminders sent to residents before each pickup day so nothing gets missed.</p></div></div>
+      <div class="tr-pm-feat"><div class="tr-pm-feat-icon">&#x1F9D1;&#x200D;&#x1F4BC;</div><div class="tr-pm-feat-text"><h5>Runner Management</h5><p>We handle hiring, onboarding, and supervising the on-site teen runner. You just approve and go.</p></div></div>
+    </div>
+  </div>
+  <div class="tr-cta-banner">
+    <h2>Ready to Add Trash Runners to Your Property?</h2>
+    <p>Get a custom quote for your property size and pickup schedule. Setup takes less than a week.</p>
+    <a href="#" onclick="showSection('contact');return false;">Request a Quote &#8594;</a>
+  </div>
+</div>
+</div>
+<!-- ══ END TRASH RUNNERS ══ -->
+
+
 <!-- ══ FOOTER ══ -->
 <footer>
 <style>
@@ -1057,7 +1223,8 @@ footer{background:#0a1628;padding:52px 60px 28px;}
 <div class="footer-social"><a href="https://linkedin.com" target="_blank" title="LinkedIn">in</a><a href="mailto:jayhughes@hughesstrategic.net" title="Email">@</a><a href="tel:8327242007" title="Call">&#9742;</a></div>
 </div>
 <div class="footer-cols">
-<div class="footer-col"><h4>Solutions</h4><ul><li><a href="#" onclick="showSection('lockers');return false;">Parcel Lockers</a></li><li><a href="#" onclick="showSection('lockers');return false;">Food &amp; Grocery Lockers</a></li><li><a href="#" onclick="showSection('lockers');return false;">Pizza Lockers</a></li><li><a href="#" onclick="showSection('lockers');return false;">Asset Management</a></li><li><a href="#" onclick="showSection('lockers');return false;">Vending Machines</a></li></ul></div>
+<div class="footer-col"><h4>Solutions</h4><ul><li><a href="#" onclick="showSection('lockers');return false;">Parcel Lockers</a></li><li><a href="#" onclick="showSection('lockers');return false;">Food &amp; Grocery Lockers</a></li><li><a href="#" onclick="showSection('lockers');return false;">Pizza Lockers</a></li><li><a href="#" onclick="showSection('lockers');return false;">Asset Management</a></li><li><a href="#" onclick="showSection('lockers');return false;">Vending Machines</a></li>
+<li><a href="#" onclick="showSection('trash');return false;">Trash Runners</a></li></ul></div>
 <div class="footer-col"><h4>Markets</h4><ul><li><a href="#" onclick="showSection('markets');return false;">Multifamily &amp; Apartments</a></li><li><a href="#" onclick="showSection('markets');return false;">Food &amp; Restaurant</a></li><li><a href="#" onclick="showSection('markets');return false;">Corporate &amp; Enterprise</a></li></ul></div>
 <div class="footer-col"><h4>Company</h4><ul><li><a href="#" onclick="showSection('home');return false;">About HSG</a></li><li><a href="#" onclick="showSection('how');return false;">How It Works</a></li><li><a href="mailto:jayhughes@hughesstrategic.net">Contact Us</a></li><li><a href="mailto:jayhughes@hughesstrategic.net">Get a Quote</a></li></ul></div>
 <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:jayhughes@hughesstrategic.net">jayhughes@hughesstrategic.net</a></li><li><a href="tel:8327242007">832 724 2007</a></li><li><span>3050 Post Oak Blvd, Suite 510-U60<br>Houston, TX 77056</span></li></ul></div>
