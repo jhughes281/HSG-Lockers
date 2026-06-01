@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Trash Runners — Hughes Strategic Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,::before,::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0D1B2E;
+  --navy-mid:#162540;
+  --navy-light:#1E3355;
+  --teal:#00C4A1;
+  --teal-dim:#009C80;
+  --gold:#C9A84C;
+  --gold-light:#E8C97A;
+  --cream:#F7F4EE;
+  --text-muted:#8A96A8;
+  --border:rgba(255,255,255,0.08);
+  --white:#fff;
+}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;background:var(--navy);color:var(--white);line-height:1.6;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,27,46,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 40px;height:72px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo-icon{width:36px;height:36px;border:1.5px solid var(--teal);border-radius:6px;display:flex;align-items:center;justify-content:center}
+.nav-logo-icon svg{width:20px;height:20px;stroke:var(--teal);fill:none;stroke-width:1.8}
+.nav-logo-text{font-family:"Cormorant Garamond",serif;font-size:22px;color:var(--white);letter-spacing:0.04em}
+.nav-logo-text span{color:var(--teal)}
+.nav-logo-sub{font-size:9px;font-weight:500;letter-spacing:0.18em;color:var(--text-muted);text-transform:uppercase;margin-top:2px}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-link{color:var(--text-muted);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:0.04em;transition:color .2s}
+.nav-link:hover,.nav-link.active{color:var(--white)}
+.nav-cta{background:var(--teal);color:var(--navy);font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:10px 22px;border-radius:4px;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--teal-dim)}
+@media(max-width:768px){.nav-links{display:none}.nav-logo-sub{display:none}}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:120px 24px 80px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(0,196,161,0.07) 0%,transparent 70%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 30%,transparent 100%)}
+.hero-inner{position:relative;z-index:1;max-width:780px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal);margin-bottom:24px;padding:6px 16px;border:1px solid rgba(0,196,161,0.25);border-radius:100px}
+.hero-eyebrow-dot{width:6px;height:6px;background:var(--teal);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(0.8)}}
+.hero h1{font-family:"DM Sans",sans-serif;font-size:clamp(42px,7vw,72px);font-weight:300;line-height:1.1;letter-spacing:-0.02em;margin-bottom:8px}
+.hero h1 strong{font-weight:600;color:var(--teal)}
+.hero-sub{font-size:clamp(15px,2vw,18px);color:var(--text-muted);max-width:560px;margin:24px auto 40px;line-height:1.7}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--teal);color:var(--navy);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:14px 32px;border-radius:4px;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .1s}
+.btn-primary:hover{background:var(--teal-dim);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--white);font-size:13px;font-weight:500;letter-spacing:0.06em;padding:14px 32px;border-radius:4px;text-decoration:none;border:1px solid rgba(255,255,255,0.2);cursor:pointer;transition:border-color .2s,background .2s}
+.btn-outline:hover{border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.04)}
+.hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.4}
+.hero-scroll span{font-size:10px;letter-spacing:0.14em;text-transform:uppercase}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--white),transparent);animation:scrollline 2s ease-in-out infinite}
+@keyframes scrollline{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.feature-strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 40px;display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;background:rgba(255,255,255,0.02)}
+.feat-item{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:500;color:var(--text-muted)}
+.feat-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0}
+.page-section{padding:100px 40px}
+@media(max-width:768px){.page-section{padding:64px 24px}.feature-strip{padding:20px 24px;gap:24px}}
+.sec-label{font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+.sec-title{font-size:clamp(28px,4vw,44px);font-weight:300;line-height:1.2;letter-spacing:-0.02em;margin-bottom:20px}
+.sec-title strong{font-weight:600}
+.sec-body{font-size:16px;color:var(--text-muted);line-height:1.8;max-width:600px}
+.divider{width:48px;height:2px;background:var(--teal);margin:28px 0}
+.services-section{background:var(--navy-mid)}
+.services-inner{max-width:1100px;margin:0 auto}
+.services-header{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-bottom:64px}
+@media(max-width:768px){.services-header{grid-template-columns:1fr}}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.svc-card{background:var(--navy);padding:40px 36px;position:relative;transition:background .25s}
+.svc-card:hover{background:rgba(30,51,85,0.6)}
+.svc-card::after{content:'';position:absolute;inset:0;border:1px solid transparent;transition:border-color .25s}
+.svc-card:hover::after{border-color:rgba(0,196,161,0.15)}
+.svc-num{font-family:"Cormorant Garamond",serif;font-size:48px;font-weight:400;color:rgba(0,196,161,0.12);line-height:1;margin-bottom:20px}
+.svc-icon{width:48px;height:48px;background:rgba(0,196,161,0.08);border:1px solid rgba(0,196,161,0.2);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:24px}
+.svc-icon svg{width:22px;height:22px;stroke:var(--teal);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.svc-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);border:1px solid rgba(0,196,161,0.25);padding:4px 10px;border-radius:100px;margin-bottom:16px}
+.svc-tag.gold{color:var(--gold);border-color:rgba(201,168,76,0.25)}
+.svc-title{font-size:20px;font-weight:600;margin-bottom:12px;line-height:1.3}
+.svc-desc{font-size:14px;color:var(--text-muted);line-height:1.75}
+.svc-details{margin-top:20px;list-style:none}
+.svc-details li{font-size:13px;color:var(--text-muted);padding:7px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.svc-details li:last-child{border-bottom:none}
+.svc-details li::before{content:'';width:4px;height:4px;background:var(--teal);border-radius:50%;flex-shrink:0}
+.workforce-section{background:var(--navy)}
+.workforce-inner{max-width:1100px;margin:0 auto}
+.workforce-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:60px}
+@media(max-width:900px){.workforce-grid{grid-template-columns:1fr;gap:48px}}
+.wf-banner{background:linear-gradient(135deg,var(--navy-light),var(--navy-mid));border:1px solid var(--border);border-radius:12px;padding:48px 40px;position:relative;overflow:hidden}
+.wf-banner::before{content:'COMMUNITY WORKFORCE';position:absolute;top:20px;right:24px;font-size:9px;font-weight:600;letter-spacing:0.2em;color:rgba(0,196,161,0.15)}
+.wf-stat-row{display:flex;gap:32px;margin-bottom:40px}
+.wf-stat{text-align:center}
+.wf-stat-num{font-family:"Cormorant Garamond",serif;font-size:52px;font-weight:400;color:var(--teal);line-height:1}
+.wf-stat-lbl{font-size:11px;color:var(--text-muted);letter-spacing:0.08em;text-transform:uppercase;margin-top:4px}
+.wf-divider{width:1px;background:var(--border);align-self:stretch}
+.wf-profile-row{display:flex;gap:12px;margin-top:8px}
+.wf-profile{background:rgba(0,196,161,0.06);border:1px solid rgba(0,196,161,0.15);border-radius:8px;padding:16px;flex:1;text-align:center}
+.wf-profile-avatar{width:44px;height:44px;border-radius:50%;background:var(--navy-light);border:2px solid rgba(0,196,161,0.3);margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.wf-profile-name{font-size:13px;font-weight:600;margin-bottom:2px}
+.wf-profile-role{font-size:11px;color:var(--teal)}
+.wf-profile-pay{font-size:11px;color:var(--text-muted);margin-top:6px}
+.benefit-list{list-style:none;display:flex;flex-direction:column;gap:0}
+.benefit-item{display:flex;align-items:flex-start;gap:16px;padding:22px 0;border-bottom:1px solid var(--border)}
+.benefit-item:last-child{border-bottom:none}
+.bi-icon{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(0,196,161,0.08);border:1px solid rgba(0,196,161,0.15)}
+.bi-icon svg{width:18px;height:18px;stroke:var(--teal);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.bi-icon.gold-icon{background:rgba(201,168,76,0.08);border-color:rgba(201,168,76,0.2)}
+.bi-icon.gold-icon svg{stroke:var(--gold)}
+.bi-text h4{font-size:15px;font-weight:600;margin-bottom:4px}
+.bi-text p{font-size:13px;color:var(--text-muted);line-height:1.6}
+.how-section{background:var(--navy-mid)}
+.how-inner{max-width:1100px;margin:0 auto}
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;margin-top:60px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.step{padding:40px 32px;position:relative;background:var(--navy);border-right:1px solid var(--border)}
+.step:last-child{border-right:none}
+@media(max-width:768px){.step{border-right:none;border-bottom:1px solid var(--border)}.step:last-child{border-bottom:none}}
+.step-num{font-family:"Cormorant Garamond",serif;font-size:56px;font-weight:400;color:rgba(0,196,161,0.1);line-height:1;margin-bottom:16px}
+.step-title{font-size:16px;font-weight:600;margin-bottom:10px}
+.step-desc{font-size:13px;color:var(--text-muted);line-height:1.7}
+.step-arrow{position:absolute;top:40px;right:-14px;width:28px;height:28px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;font-size:12px;color:var(--navy);font-weight:700}
+@media(max-width:768px){.step-arrow{display:none}}
+.markets-section{background:var(--navy)}
+.markets-inner{max-width:1100px;margin:0 auto}
+.markets-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:60px}
+.market-card{background:var(--navy-mid);border:1px solid var(--border);border-radius:8px;padding:36px 32px;transition:border-color .25s,background .25s;cursor:pointer}
+.market-card:hover{border-color:rgba(0,196,161,0.3);background:rgba(30,51,85,0.5)}
+.market-num{font-family:"Cormorant Garamond",serif;font-size:18px;color:var(--teal);margin-bottom:16px}
+.market-icon{font-size:32px;margin-bottom:16px}
+.market-title{font-size:18px;font-weight:600;margin-bottom:10px}
+.market-desc{font-size:13px;color:var(--text-muted);line-height:1.7;margin-bottom:20px}
+.market-link{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.market-link:hover{color:var(--white)}
+.join-section{background:var(--navy-mid);border-top:1px solid var(--border)}
+.join-inner{max-width:1100px;margin:0 auto}
+.join-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:60px}
+@media(max-width:768px){.join-grid{grid-template-columns:1fr}}
+.join-card{background:var(--navy);border:1px solid var(--border);border-radius:8px;padding:40px;transition:border-color .25s}
+.join-card:hover{border-color:rgba(0,196,161,0.25)}
+.join-card.featured{border-color:rgba(0,196,161,0.4);background:rgba(0,196,161,0.04)}
+.jc-label{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+.jc-label.gold{color:var(--gold)}
+.jc-title{font-size:22px;font-weight:600;margin-bottom:12px;line-height:1.3}
+.jc-desc{font-size:14px;color:var(--text-muted);line-height:1.75;margin-bottom:28px}
+.jc-list{list-style:none;margin-bottom:32px}
+.jc-list li{font-size:13px;color:var(--text-muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.jc-list li:last-child{border-bottom:none}
+.jc-list li::before{content:'';width:4px;height:4px;background:var(--teal);border-radius:50%;flex-shrink:0}
+.cta-section{background:var(--navy);padding:100px 40px;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(0,196,161,0.06) 0%,transparent 70%)}
+.cta-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
+.cta-title{font-size:clamp(28px,4vw,44px);font-weight:300;line-height:1.2;letter-spacing:-0.02em;margin-bottom:20px}
+.cta-title strong{font-weight:600;color:var(--teal)}
+.cta-sub{font-size:16px;color:var(--text-muted);margin-bottom:40px;line-height:1.7}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.contact-row{display:flex;gap:48px;justify-content:center;flex-wrap:wrap;margin-top:56px;padding-top:56px;border-top:1px solid var(--border)}
+.contact-item{display:flex;align-items:center;gap:12px}
+.ci-label{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:2px}
+.ci-val{font-size:15px;color:var(--white)}
+footer{background:var(--navy-mid);border-top:1px solid var(--border);padding:60px 40px 36px}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}}
+@media(max-width:600px){.footer-top{grid-template-columns:1fr}}
+.footer-brand-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.footer-logo-text{font-family:"Cormorant Garamond",serif;font-size:22px;letter-spacing:0.04em}
+.footer-logo-text span{color:var(--teal)}
+.footer-tagline{font-size:13px;color:var(--text-muted);line-height:1.7;max-width:280px}
+.footer-col h4{font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:10px}
+.footer-col a{font-size:13px;color:var(--text-muted);text-decoration:none;transition:color .2s}
+.footer-col a:hover{color:var(--white)}
+.footer-col a.active{color:var(--teal)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-copy{font-size:12px;color:var(--text-muted)}
+.footer-links{display:flex;gap:24px}
+.footer-links a{font-size:12px;color:var(--text-muted);text-decoration:none}
+.footer-links a:hover{color:var(--white)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    </div>
+    <div>
+      <div class="nav-logo-text">HS<span>G</span></div>
+      <div class="nav-logo-sub">Hughes Strategic Group</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="nav-link">Solutions</a></li>
+    <li><a href="index.html" class="nav-link">Markets</a></li>
+    <li><a href="trash-runners.html" class="nav-link active">Trash Runners</a></li>
+    <li><a href="index.html" class="nav-link">About</a></li>
+    <li><a href="index.html" class="nav-link">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">GET A QUOTE</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner reveal">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-dot"></span>
+      Houston &middot; Texas &middot; Property Amenity Services
+    </div>
+    <h1>Door-to-Door<br/><strong>Trash Runners</strong></h1>
+    <p class="hero-sub">Scheduled valet trash pickup for multifamily properties &mdash; powered by a community workforce of on-site residents. Clean properties, trusted crew, zero strangers.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Request a Quote &rarr;</a>
+      <a href="#workforce" class="btn-outline">Our Crew Program</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
+</section>
+
+<div class="feature-strip">
+  <div class="feat-item"><span class="feat-dot"></span>Weekly &amp; Bi-Weekly Pickup</div>
+  <div class="feat-item"><span class="feat-dot"></span>Monthly Heavy Item Removal</div>
+  <div class="feat-item"><span class="feat-dot"></span>On-Site Community Workforce</div>
+  <div class="feat-item"><span class="feat-dot"></span>No Strangers on Property</div>
+  <div class="feat-item"><span class="feat-dot"></span>Houston, TX</div>
+</div>
+
+<section class="page-section services-section" id="services">
+  <div class="services-inner">
+    <div class="services-header reveal">
+      <div>
+        <div class="sec-label">Service Tiers</div>
+        <h2 class="sec-title">Flexible pickup<br/><strong>on your schedule</strong></h2>
+        <div class="divider"></div>
+      </div>
+      <div>
+        <p class="sec-body">Property managers set the schedule once. Residents get door-to-door convenience. HSG handles every pickup, route, and removal &mdash; one contract, one contact.</p>
+      </div>
+    </div>
+    <div class="services-grid reveal">
+      <div class="svc-card">
+        <div class="svc-num">01</div>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+        </div>
+        <div class="svc-tag">Weekly</div>
+        <div class="svc-title">Standard Weekly Pickup</div>
+        <p class="svc-desc">Door-to-door trash collection on a fixed day each week. Property manager sets the route &mdash; residents set out their bin, we do the rest.</p>
+        <ul class="svc-details">
+          <li>Fixed collection day per property</li>
+          <li>Resident door-to-door service</li>
+          <li>Transport to on-site dumpster</li>
+          <li>Resident pickup reminders included</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">02</div>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/></svg>
+        </div>
+        <div class="svc-tag">Bi-Weekly</div>
+        <div class="svc-title">Bi-Weekly Pickup</div>
+        <p class="svc-desc">A lighter-footprint plan for smaller properties or lower-volume communities. Same trusted door-to-door service &mdash; every two weeks.</p>
+        <ul class="svc-details">
+          <li>Every 14 days, same day each cycle</li>
+          <li>Ideal for smaller complexes</li>
+          <li>Flexible upgrade to weekly anytime</li>
+          <li>Same crew and route consistency</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">03</div>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div class="svc-tag gold">Monthly &middot; Heavy Items</div>
+        <div class="svc-title">Monthly Heavy Item Removal</div>
+        <p class="svc-desc">Furniture, appliances, large boxes. Residents schedule a pickup window within a designated monthly day. Available curbside or in-unit by appointment.</p>
+        <ul class="svc-details">
+          <li>One scheduled removal day per month</li>
+          <li>Resident-chosen pickup window</li>
+          <li>Curbside or in-unit options</li>
+          <li>Furniture, appliances, bulk items</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="page-section how-section" id="how">
+  <div class="how-inner">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 0">
+      <div class="sec-label">Process</div>
+      <h2 class="sec-title">Simple for<br/><strong>property managers</strong></h2>
+      <div class="divider" style="margin:28px auto"></div>
+    </div>
+    <div class="steps-grid reveal">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Property sets the schedule</div>
+        <p class="step-desc">Managers choose frequency, pickup days, and any special notes. HSG builds the route around your property layout and resident density.</p>
+        <div class="step-arrow">&rarr;</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Residents get notified</div>
+        <p class="step-desc">Pickup reminders sent ahead of collection day. Heavy item requests submitted through a simple scheduling window &mdash; no confusion, no missed pickups.</p>
+        <div class="step-arrow">&rarr;</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Our crew runs the route</div>
+        <p class="step-desc">Our on-site community crew collects from each door and transports to the designated dumpster or disposal point. No resident lifting required.</p>
+        <div class="step-arrow">&rarr;</div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">Monthly reporting</div>
+        <p class="step-desc">Service summaries delivered to property management each month &mdash; routes completed, items collected, and any flagged issues resolved proactively.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section workforce-section" id="workforce">
+  <div class="workforce-inner">
+    <div class="reveal">
+      <div class="sec-label">Community Workforce Program</div>
+      <h2 class="sec-title">Teens earn.<br/><strong>Properties benefit.</strong><br/>Communities grow.</h2>
+      <div class="divider"></div>
+      <p class="sec-body">HSG hires young residents &mdash; teenagers looking for summer income, school money, or flexible part-time work &mdash; as the crew that services their own property. It&rsquo;s a model that works for everyone.</p>
+    </div>
+    <div class="workforce-grid reveal">
+      <div class="workforce-visual">
+        <div class="wf-banner">
+          <div class="wf-stat-row">
+            <div class="wf-stat">
+              <div class="wf-stat-num">0</div>
+              <div class="wf-stat-lbl">Strangers on property</div>
+            </div>
+            <div class="wf-divider"></div>
+            <div class="wf-stat">
+              <div class="wf-stat-num">100%</div>
+              <div class="wf-stat-lbl">Resident crew members</div>
+            </div>
+            <div class="wf-divider"></div>
+            <div class="wf-stat">
+              <div class="wf-stat-num">Flex</div>
+              <div class="wf-stat-lbl">School-friendly hours</div>
+            </div>
+          </div>
+          <div class="wf-profile-row">
+            <div class="wf-profile">
+              <div class="wf-profile-avatar">&#x1F9D1;</div>
+              <div class="wf-profile-name">Crew Member</div>
+              <div class="wf-profile-role">Building A&ndash;C Route</div>
+              <div class="wf-profile-pay">Competitive hourly pay</div>
+            </div>
+            <div class="wf-profile">
+              <div class="wf-profile-avatar">&#x1F467;</div>
+              <div class="wf-profile-name">Crew Member</div>
+              <div class="wf-profile-role">Building D&ndash;F Route</div>
+              <div class="wf-profile-pay">Flexible schedule</div>
+            </div>
+            <div class="wf-profile">
+              <div class="wf-profile-avatar">&#x1F9D2;</div>
+              <div class="wf-profile-name">Crew Member</div>
+              <div class="wf-profile-role">Heavy Item Specialist</div>
+              <div class="wf-profile-pay">Summer &amp; school year</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="benefit-list">
+        <li class="benefit-item">
+          <div class="bi-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="bi-text">
+            <h4>No strangers on the property</h4>
+            <p>The crew already lives there. Residents recognize them. Property managers trust them. Safety is built into the model.</p>
+          </div>
+        </li>
+        <li class="benefit-item">
+          <div class="bi-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="bi-text">
+            <h4>Zero commute &mdash; on-site from day one</h4>
+            <p>Workers live in the building. No tardiness, no transit issues, no excuses. They&rsquo;re already there when the route starts.</p>
+          </div>
+        </li>
+        <li class="benefit-item">
+          <div class="bi-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="bi-text">
+            <h4>Parents can monitor from home</h4>
+            <p>Teens work in their own complex. Parents don&rsquo;t need to drive them to work &mdash; they can keep an eye on their kid right from their unit.</p>
+          </div>
+        </li>
+        <li class="benefit-item">
+          <div class="bi-icon gold-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <div class="bi-text">
+            <h4>Real income for real goals</h4>
+            <p>Competitive hourly pay with flexible hours built around school schedules. Summer money, school supplies, first job experience.</p>
+          </div>
+        </li>
+        <li class="benefit-item">
+          <div class="bi-icon gold-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div class="bi-text">
+            <h4>Community investment &mdash; they care</h4>
+            <p>Workers take pride in where they live. A crew that calls the property home keeps it cleaner than any outside contractor ever could.</p>
+          </div>
+        </li>
+        <li class="benefit-item">
+          <div class="bi-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+          <div class="bi-text">
+            <h4>HSG boots on the ground</h4>
+            <p>On-site presence makes it easy to layer in vending restocking, parcel locker management, and other HSG services &mdash; one vendor, multiple solutions.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="page-section markets-section" id="markets">
+  <div class="markets-inner">
+    <div class="reveal">
+      <div class="sec-label">Who We Serve</div>
+      <h2 class="sec-title">Built for<br/><strong>every property type</strong></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="markets-grid reveal">
+      <div class="market-card">
+        <div class="market-num">01</div>
+        <div class="market-icon">&#x1F3E2;</div>
+        <div class="market-title">Multifamily &amp; Apartments</div>
+        <p class="market-desc">High-density residential communities benefit most. More doors, more residents, more need for a reliable, trusted valet trash solution with an on-site crew.</p>
+        <a href="#contact" class="market-link">Get a quote &rarr;</a>
+      </div>
+      <div class="market-card">
+        <div class="market-num">02</div>
+        <div class="market-icon">&#x1F3D8;&#xFE0F;</div>
+        <div class="market-title">Townhome &amp; Condo Communities</div>
+        <p class="market-desc">Smaller footprint, same great service. Our community crew model scales down perfectly for HOA-managed communities and lower-density properties.</p>
+        <a href="#contact" class="market-link">Get a quote &rarr;</a>
+      </div>
+      <div class="market-card">
+        <div class="market-num">03</div>
+        <div class="market-icon">&#x1F3ED;</div>
+        <div class="market-title">Mixed-Use &amp; Commercial</div>
+        <p class="market-desc">Ground-floor retail and commercial tenants in mixed-use buildings can bundle trash runner service alongside vending and locker solutions through one HSG contract.</p>
+        <a href="#contact" class="market-link">Get a quote &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section join-section" id="join">
+  <div class="join-inner">
+    <div class="reveal" style="text-align:center;max-width:560px;margin:0 auto 0">
+      <div class="sec-label">Get Involved</div>
+      <h2 class="sec-title">For properties<br/><strong>&amp; young workers</strong></h2>
+      <div class="divider" style="margin:28px auto"></div>
+    </div>
+    <div class="join-grid reveal">
+      <div class="join-card featured">
+        <div class="jc-label">Property Managers</div>
+        <div class="jc-title">Set up service for your property</div>
+        <p class="jc-desc">Add valet trash to your amenity package. One conversation with HSG gets you a custom pickup schedule, pricing, and crew recruitment &mdash; all tailored to your property.</p>
+        <ul class="jc-list">
+          <li>Custom schedule &amp; pricing</li>
+          <li>We recruit the crew from your residents</li>
+          <li>Monthly service reports</li>
+          <li>Bundle with vending &amp; parcel lockers</li>
+          <li>Single HSG contract for all services</li>
+        </ul>
+        <a href="#contact" class="btn-primary">Contact HSG &rarr;</a>
+      </div>
+      <div class="join-card">
+        <div class="jc-label gold">Join the Crew</div>
+        <div class="jc-title">Work where you live. Earn on your schedule.</div>
+        <p class="jc-desc">Live in a participating complex? Apply to join the HSG crew at your property. We&rsquo;re looking for motivated teens and young adults ready to earn real income close to home.</p>
+        <ul class="jc-list">
+          <li>Work in your own apartment complex</li>
+          <li>Flexible hours &mdash; school-friendly</li>
+          <li>Competitive hourly pay</li>
+          <li>Summer, school year, or both</li>
+          <li>Real work experience on your r&eacute;sum&eacute;</li>
+        </ul>
+        <a href="#contact" class="btn-outline" style="display:inline-block;text-align:center">Apply to Work &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contact">
+  <div class="cta-inner reveal">
+    <div class="sec-label" style="text-align:center">Ready to get started?</div>
+    <h2 class="cta-title">Bring <strong>Trash Runners</strong><br/>to your property</h2>
+    <p class="cta-sub">Hughes Strategic Group &mdash; Houston&rsquo;s local amenity solutions partner. One call gets you a custom quote for valet trash, vending, parcel lockers, and more.</p>
+    <div class="cta-btns">
+      <a href="mailto:jayhughes@hughesstrategic.net" class="btn-primary">Request a Quote &rarr;</a>
+      <a href="index.html" class="btn-outline">View All HSG Services</a>
+    </div>
+    <div class="contact-row">
+      <div class="contact-item">
+        <div>
+          <div class="ci-label">Email</div>
+          <div class="ci-val">jayhughes@hughesstrategic.net</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div>
+          <div class="ci-label">Phone</div>
+          <div class="ci-val">832 724 2007</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div>
+          <div class="ci-label">Address</div>
+          <div class="ci-val">3050 Post Oak Blvd, Suite 510-U60, Houston TX 77056</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand-logo">
+          <div class="footer-logo-text">HS<span>G</span></div>
+        </div>
+        <p class="footer-tagline">Smart locker solutions, vending, parcel lockers, and community amenity services for Houston &amp; Texas.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="index.html">Parcel Lockers</a></li>
+          <li><a href="index.html">Food &amp; Grocery Lockers</a></li>
+          <li><a href="index.html">Pizza Lockers</a></li>
+          <li><a href="index.html">Asset Management</a></li>
+          <li><a href="index.html">Vending Machines</a></li>
+          <li><a href="trash-runners.html" class="active">Trash Runners</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Markets</h4>
+        <ul>
+          <li><a href="index.html">Multifamily &amp; Apartments</a></li>
+          <li><a href="index.html">Food &amp; Restaurant</a></li>
+          <li><a href="index.html">Corporate &amp; Enterprise</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:jayhughes@hughesstrategic.net">jayhughes@hughesstrategic.net</a></li>
+          <li><a href="tel:8327242007">832 724 2007</a></li>
+          <li><a href="#">3050 Post Oak Blvd<br/>Suite 510-U60<br/>Houston, TX 77056</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 Hughes Strategic Group &middot; Houston, TX &middot; 832 724 2007</div>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); } });
+}, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
