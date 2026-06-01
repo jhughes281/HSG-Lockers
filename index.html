@@ -221,6 +221,80 @@ footer{border-top:1px solid var(--border);padding:36px 40px;display:flex;align-i
 </style>
 </head>
 <body>
+<!-- ══ VALET TRASH PROMO BANNER ══ -->
+<style>
+#vts-banner{
+  position:relative;
+  background:linear-gradient(90deg,#007a66 0%,#00C4A1 50%,#007a66 100%);
+  background-size:200% 100%;
+  animation:vts-shimmer 6s ease-in-out infinite;
+  color:#0a1628;
+  padding:0 60px;
+  height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  z-index:1100;
+  flex-shrink:0;
+}
+@keyframes vts-shimmer{
+  0%{background-position:100% 0}
+  50%{background-position:0% 0}
+  100%{background-position:100% 0}
+}
+#vts-banner.hidden{display:none}
+.vts-icon{font-size:16px;flex-shrink:0}
+.vts-text{font-size:13px;font-weight:600;letter-spacing:0.02em;white-space:nowrap}
+.vts-pill{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:rgba(10,22,40,0.18);border-radius:100px;padding:3px 10px;flex-shrink:0}
+.vts-link{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:#0a1628;
+  text-decoration:none;
+  background:rgba(10,22,40,0.15);
+  border:1.5px solid rgba(10,22,40,0.25);
+  border-radius:4px;
+  padding:5px 14px;
+  transition:background 0.2s;
+  white-space:nowrap;
+}
+.vts-link:hover{background:rgba(10,22,40,0.28)}
+.vts-close{
+  position:absolute;
+  right:16px;
+  top:50%;
+  transform:translateY(-50%);
+  background:none;
+  border:none;
+  cursor:pointer;
+  color:rgba(10,22,40,0.5);
+  font-size:18px;
+  line-height:1;
+  padding:4px 6px;
+  transition:color 0.2s;
+}
+.vts-close:hover{color:#0a1628}
+@media(max-width:600px){
+  .vts-text{display:none}
+  .vts-pill{display:none}
+  #vts-banner{justify-content:flex-start;padding:0 44px 0 16px}
+}
+/* Push nav down by banner height */
+nav{top:44px!important}
+#vts-banner.hidden ~ nav,body.vts-dismissed nav{top:0!important}
+</style>
+<div id="vts-banner">
+  <span class="vts-icon">&#x1F5D1;&#xFE0F;</span>
+  <span class="vts-pill">New Service</span>
+  <span class="vts-text">Introducing Valet Trash Service &mdash; door-to-door pickup staffed by residents who live on your property</span>
+  <a href="trash-runners.html" class="vts-link">Learn More &rarr;</a>
+  <button class="vts-close" onclick="document.getElementById('vts-banner').classList.add('hidden');document.body.classList.add('vts-dismissed')" aria-label="Dismiss">&times;</button>
+</div>
+<!-- ══ END VALET TRASH PROMO BANNER ══ -->
+
 
 <!-- ══ NAVIGATION ══ -->
 <nav>
