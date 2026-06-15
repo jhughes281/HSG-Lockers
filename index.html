@@ -322,9 +322,11 @@ nav{top:44px!important}
         <button class="dropdown-item" onclick="showSection('lockers'); setTab('food')"><span class="dropdown-dot"></span>Food & Grocery Lockers</button>
         <button class="dropdown-item" onclick="showSection('lockers'); setTab('pizza')"><span class="dropdown-dot"></span>Pizza Lockers</button>
         <button class="dropdown-item" onclick="showSection('lockers'); setTab('asset')"><span class="dropdown-dot"></span>Asset Management</button>
-        <button class="dropdown-item" onclick="showSection('lockers'); setTab('vending')"><span class="dropdown-dot"></span>Vending Machines</button>
       </div>
     </div>
+    <div class="nav-item">
+        <button class="nav-link" onclick="showSection('vending')">Vending Machines</button>
+        </div>
     <div class="nav-item">
       <button class="nav-link" onclick="showSection('how')">How It Works <span class="arrow">▾</span></button>
       <div class="dropdown">
@@ -630,8 +632,14 @@ nav{top:44px!important}
       </div>
     </div>
 
-    <!-- VENDING TAB -->
-    <div id="tab-vending" class="tab-panel">
+    </div>
+    </div>
+
+    <!-- VENDING PAGE (own top-level section) -->
+    <div id="section-vending" class="page-section">
+      <div class="content-section">
+      <!-- VENDING TAB -->
+      <div id="tab-vending" class="tab-panel active">
 <style>
 .vending-intro{text-align:center;margin-bottom:48px;}
 .vending-intro p{color:rgba(255,255,255,0.6);font-size:15px;max-width:700px;margin:12px auto 0;}
@@ -670,9 +678,9 @@ nav{top:44px!important}
 <!-- HAHA AI Vending -->
 <div class="vendor-section">
   <div class="vendor-header">
-    <span class="vendor-badge ai">AI-Powered</span>
+
     <span class="vendor-name">AI Smart-Checkout Machines</span>
-    <span class="vendor-tagline">hahavending.com &nbsp;·&nbsp; AI Vision &amp; Smart Checkout</span>
+
   </div>
   <div class="vend-grid">
     <div class="vend-card">
@@ -741,9 +749,9 @@ nav{top:44px!important}
 <!-- Royal Vendors -->
 <div class="vendor-section">
   <div class="vendor-header">
-    <span class="vendor-badge premium">USA Made</span>
+
     <span class="vendor-name">Classic Beverage Vending</span>
-    <span class="vendor-tagline">royalvendors.com &nbsp;·&nbsp; Energy Star · ADA Compliant · Made in America</span>
+
   </div>
   <div class="vend-grid">
     <div class="vend-card">
@@ -1239,7 +1247,7 @@ footer{background:#0a1628;padding:52px 60px 28px;}
 <div class="footer-social"><a href="https://linkedin.com" target="_blank" title="LinkedIn">in</a><a href="mailto:jayhughes@hughesstrategic.net" title="Email">@</a><a href="tel:8327242007" title="Call">&#9742;</a></div>
 </div>
 <div class="footer-cols">
-<div class="footer-col"><h4>Solutions</h4><ul><li><a href="#" onclick="showSection('lockers');setTab('parcel');return false;">Parcel Lockers</a></li><li><a href="#" onclick="showSection('lockers');setTab('food');return false;">Food &amp; Grocery Lockers</a></li><li><a href="#" onclick="showSection('lockers');setTab('pizza');return false;">Pizza Lockers</a></li><li><a href="#" onclick="showSection('lockers');setTab('asset');return false;">Asset Management</a></li><li><a href="#" onclick="showSection('lockers');setTab('vending');return false;">Vending Machines</a></li>
+<div class="footer-col"><h4>Solutions</h4><ul><li><a href="#" onclick="showSection('lockers');setTab('parcel');return false;">Parcel Lockers</a></li><li><a href="#" onclick="showSection('lockers');setTab('food');return false;">Food &amp; Grocery Lockers</a></li><li><a href="#" onclick="showSection('lockers');setTab('pizza');return false;">Pizza Lockers</a></li><li><a href="#" onclick="showSection('lockers');setTab('asset');return false;">Asset Management</a></li><li><a href="#" onclick="showSection('vending');return false;">Vending Machines</a></li>
 <li><a href="trash-runners.html">Valet Trash Service</a></li></ul></div>
 <div class="footer-col"><h4>Markets</h4><ul><li><a href="#" onclick="showSection('markets');return false;">Multifamily &amp; Apartments</a></li><li><a href="#" onclick="showSection('markets');return false;">Food &amp; Restaurant</a></li><li><a href="#" onclick="showSection('markets');return false;">Corporate &amp; Enterprise</a></li></ul></div>
 <div class="footer-col"><h4>Company</h4><ul><li><a href="#" onclick="showSection('home');return false;">About HSG</a></li><li><a href="#" onclick="showSection('how');return false;">How It Works</a></li><li><a href="mailto:jayhughes@hughesstrategic.net">Contact Us</a></li><li><a href="mailto:jayhughes@hughesstrategic.net">Get a Quote</a></li></ul></div>
@@ -1264,7 +1272,7 @@ function showSection(name) {
     el.classList.remove('nav-active');
   });
   // Map section name to nav button text
-  var navMap = {lockers:'Locker Solutions',how:'How It Works',markets:'Markets',contact:'Contact',home:'',trash:'Valet Trash Service'};
+  var navMap = {lockers:'Locker Solutions',vending:'Vending Machines',how:'How It Works',markets:'Markets',contact:'Contact',home:'',trash:'Valet Trash Service'};
   var targetText = navMap[name] || '';
   document.querySelectorAll('.nav-link').forEach(function(el) {
     if(el.textContent.trim().replace(' ▾','').trim() === targetText) {
@@ -1275,7 +1283,7 @@ function showSection(name) {
   document.querySelectorAll('footer a').forEach(function(a) {
     a.classList.remove('footer-active');
   });
-  var sectionFooterMap = {lockers:['Parcel Lockers','Food & Grocery Lockers','Pizza Lockers','Asset Management','Vending Machines'],markets:['Multifamily & Apartments','Food & Restaurant','Corporate & Enterprise'],how:['How It Works'],contact:['Contact Us','Get a Quote'],home:['About HSG'],trash:['Valet Trash Service']};
+  var sectionFooterMap = {lockers:['Parcel Lockers','Food & Grocery Lockers','Pizza Lockers','Asset Management'],vending:['Vending Machines'],markets:['Multifamily & Apartments','Food & Restaurant','Corporate & Enterprise'],how:['How It Works'],contact:['Contact Us','Get a Quote'],home:['About HSG'],trash:['Valet Trash Service']};
   var activeTexts = sectionFooterMap[name] || [];
   document.querySelectorAll('footer a').forEach(function(a) {
     if(activeTexts.indexOf(a.textContent.trim()) !== -1) {
