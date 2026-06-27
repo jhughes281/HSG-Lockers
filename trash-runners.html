@@ -203,7 +203,32 @@ footer{background:var(--navy-mid);border-top:1px solid var(--border);padding:60p
     <li><a href="index.html" class="nav-link">Contact</a></li>
   </ul>
   <a href="#contact" class="nav-cta">GET A QUOTE</a>
+  <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Open menu">&#9776;</button>
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="mm-link" href="index.html">Solutions</a>
+    <a class="mm-link" href="index.html">Markets</a>
+    <a class="mm-link" href="trash-runners.html">Valet Trash Service</a>
+    <a class="mm-link" href="index.html">About</a>
+    <a class="mm-link" href="index.html">Contact</a>
+    <a class="mm-link mm-cta" href="#contact">Get a Quote</a>
+  </div>
 </nav>
+<style>
+  .menu-toggle{display:none;background:none;border:none;color:#fff;font-size:26px;cursor:pointer;padding:6px 4px;line-height:1;}
+  .mobile-menu{position:absolute;top:100%;left:0;right:0;z-index:999;display:none;flex-direction:column;background:rgba(13,27,46,0.99);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu .mm-link{display:block;width:100%;text-align:left;border-bottom:1px solid rgba(255,255,255,0.06);color:#fff;font-family:'DM Sans',sans-serif;font-size:15px;letter-spacing:.02em;padding:16px 24px;text-decoration:none;}
+  .mobile-menu .mm-link:hover,.mobile-menu .mm-link:active{background:var(--navy-light);color:#00C4A1;}
+  .mobile-menu .mm-cta{color:#00C4A1;font-weight:600;}
+  @media(max-width:768px){
+    .menu-toggle{display:block;}
+    .nav-cta{display:none;}
+  }
+</style>
+<script>
+  function toggleMobileMenu(){var m=document.getElementById('mobileMenu');if(m)m.classList.toggle('open');}
+  function closeMobileMenu(){var m=document.getElementById('mobileMenu');if(m)m.classList.remove('open');}
+</script>
 
 <section class="hero">
   <div class="hero-bg"></div>
