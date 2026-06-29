@@ -1504,5 +1504,23 @@ function triggerReveals() {
 }
 triggerReveals();
 </script>
+
+<!-- ══ Cloudflare Web Analytics (privacy-friendly, cookieless) ══
+     SET THIS once: paste your Web Analytics token below. Get it free at
+     Cloudflare dashboard → Analytics & Logs → Web Analytics → Add a site
+     (use the JS-beacon method; works on GitHub Pages with no DNS change).
+     Until a real token is set, nothing loads. -->
+<script>
+(function(){
+  var CF_TOKEN = "YOUR_CLOUDFLARE_TOKEN";
+  if (CF_TOKEN && CF_TOKEN.indexOf("YOUR_CLOUDFLARE") === -1) {
+    var s = document.createElement('script');
+    s.defer = true;
+    s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    s.setAttribute('data-cf-beacon', JSON.stringify({ token: CF_TOKEN }));
+    document.head.appendChild(s);
+  }
+})();
+</script>
 </body>
 </html>

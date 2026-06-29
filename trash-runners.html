@@ -604,5 +604,20 @@ const observer = new IntersectionObserver((entries) => {
 }, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
+
+<!-- ══ Cloudflare Web Analytics (privacy-friendly, cookieless) ══
+     Paste the SAME token you set in index.html. Until then, nothing loads. -->
+<script>
+(function(){
+  var CF_TOKEN = "YOUR_CLOUDFLARE_TOKEN";
+  if (CF_TOKEN && CF_TOKEN.indexOf("YOUR_CLOUDFLARE") === -1) {
+    var s = document.createElement('script');
+    s.defer = true;
+    s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    s.setAttribute('data-cf-beacon', JSON.stringify({ token: CF_TOKEN }));
+    document.head.appendChild(s);
+  }
+})();
+</script>
 </body>
 </html>
