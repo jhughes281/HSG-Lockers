@@ -407,7 +407,7 @@ nav{top:44px!important}
       <button class="btn-outline" onclick="showSection('contact')">Contact Us</button>
     </div>
     <style>
-.hero-img-card{background:rgba(255,255,255,0.04)!important;border:1px solid rgba(0,196,161,0.2)!important;border-radius:16px!important;overflow:hidden;display:flex;flex-direction:column;transition:transform 0.2s,border-color 0.2s;padding:0!important;}
+.hero-img-card{background:rgba(255,255,255,0.04)!important;border:1px solid rgba(0,196,161,0.2)!important;border-radius:16px!important;overflow:hidden;display:flex;flex-direction:column;transition:transform 0.2s,border-color 0.2s;padding:0!important;cursor:pointer;}
 .hero-img-card:hover{transform:translateY(-4px);border-color:rgba(0,196,161,0.5)!important;}
 .hic-img{height:180px;overflow:hidden;background:rgba(0,196,161,0.05);}
 .hic-img img{width:100%;height:100%;object-fit:cover;display:block;}
@@ -420,9 +420,9 @@ nav{top:44px!important}
 </style>
 <div class="hero-showcase" style="max-width:940px;width:100%;margin:56px auto 0;border-radius:16px;overflow:hidden;border:1px solid rgba(0,196,161,0.28);box-shadow:0 30px 80px rgba(0,0,0,.55);opacity:0;animation:fadeUp 0.8s ease 0.95s forwards;"><img src="locker-install.jpg" alt="HSG smart parcel locker installation in Houston" style="width:100%;display:block;"></div>
 <div class="hero-img-row">
-<div class="hero-img-card"><div class="hic-img"><img src="images/hsg-df11cfc692.png" alt="Smart Locker System"/></div><div class="hic-body"><div class="hic-tag">Most Popular</div><div class="hic-name">Parcel Locker System</div><div class="hic-desc">Secure, automated package delivery for multifamily &amp; corporate properties.</div></div><div class="hic-footer"><span class="hic-cta">Learn More &#8594;</span></div></div>
-<div class="hero-img-card"><div class="hic-img"><img src="images/hsg-fe5fa08f3d.png" alt="Food Locker"/></div><div class="hic-body"><div class="hic-tag">Temperature-Controlled</div><div class="hic-name">Food &amp; Grocery Locker</div><div class="hic-desc">Temperature-controlled pickup for restaurants, ghost kitchens &amp; BOPIS.</div></div><div class="hic-footer"><span class="hic-cta">Learn More &#8594;</span></div></div>
-<div class="hero-img-card"><div class="hic-img"><img src="images/hsg-30a6f5ad25.png" alt="Pizza Locker"/></div><div class="hic-body"><div class="hic-tag">Contactless Pickup</div><div class="hic-name">Pizza Pickup Locker</div><div class="hic-desc">Hot-hold lockers purpose-built for pizza &amp; quick-service restaurant pickup.</div></div><div class="hic-footer"><span class="hic-cta">Learn More &#8594;</span></div></div>
+<div class="hero-img-card" onclick="setTab('parcel')"><div class="hic-img"><img src="images/hsg-df11cfc692.png" alt="Smart Locker System"/></div><div class="hic-body"><div class="hic-tag">Most Popular</div><div class="hic-name">Parcel Locker System</div><div class="hic-desc">Secure, automated package delivery for multifamily &amp; corporate properties.</div></div><div class="hic-footer"><span class="hic-cta">Learn More &#8594;</span></div></div>
+<div class="hero-img-card" onclick="setTab('food')"><div class="hic-img"><img src="images/hsg-fe5fa08f3d.png" alt="Food Locker"/></div><div class="hic-body"><div class="hic-tag">Temperature-Controlled</div><div class="hic-name">Food &amp; Grocery Locker</div><div class="hic-desc">Temperature-controlled pickup for restaurants, ghost kitchens &amp; BOPIS.</div></div><div class="hic-footer"><span class="hic-cta">Learn More &#8594;</span></div></div>
+<div class="hero-img-card" onclick="setTab('pizza')"><div class="hic-img"><img src="images/hsg-30a6f5ad25.png" alt="Pizza Locker"/></div><div class="hic-body"><div class="hic-tag">Contactless Pickup</div><div class="hic-name">Pizza Pickup Locker</div><div class="hic-desc">Hot-hold lockers purpose-built for pizza &amp; quick-service restaurant pickup.</div></div><div class="hic-footer"><span class="hic-cta">Learn More &#8594;</span></div></div>
 </div>
   </section>
 
