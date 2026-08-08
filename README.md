@@ -1,2 +1,2 @@
-# HSG-Lockers
-Landing page for Hughes Strategic Lockers
+# Zen Lockers
+Landing page for Zen Lockers — smart locker solutions (formerly HSG Lockers)
