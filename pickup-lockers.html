@@ -23,6 +23,7 @@
 .pl-model{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);margin:-6px 0 18px;}
 .pl-model span{color:var(--gold-light);}
 .product-layout{margin-bottom:72px;}
+.product-layout>div{min-width:0;}
 .product-layout .product-name{font-size:32px;}
 .pl-note{font-size:12px;color:var(--text-muted);font-weight:300;line-height:1.7;margin-top:14px;}
 .pl-colors{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;align-items:center;}
@@ -45,7 +46,7 @@
 <body>
 <nav>
   <a class="nav-logo" href="index.html">
-    <svg width="38" height="38" viewBox="0 0 152 152" xmlns="http://www.w3.org/2000/svg">
+    <svg width="38" height="38" viewBox="0 0 152 152" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <g transform="translate(76 76)">
         <circle cx="0" cy="0" r="66" fill="none" stroke="#00C4A1" stroke-width="8"/>
         <circle cx="0" cy="0" r="60" fill="#ffffff"/>
@@ -64,45 +65,43 @@
   </a>
   <div class="nav-links">
     <div class="nav-item">
-      <a class="nav-link nav-active" href="parcel-lockers.html">Locker Solutions <span class="arrow">▾</span></a>
+      <a class="nav-link nav-active" href="parcel-lockers.html" data-nav="lockers">Lockers <span class="arrow">▾</span></a>
       <div class="dropdown">
         <a class="dropdown-item" href="parcel-lockers.html"><span class="dropdown-dot"></span>Parcel Lockers</a>
         <a class="dropdown-item" href="food-lockers.html"><span class="dropdown-dot"></span>Food &amp; Grocery Lockers</a>
-        <a class="dropdown-item" href="pizza-lockers.html"><span class="dropdown-dot"></span>Pizza Lockers</a>
         <a class="dropdown-item" href="pickup-lockers.html"><span class="dropdown-dot"></span>Restaurant Pickup Lockers</a>
-        <a class="dropdown-item" href="asset-lockers.html"><span class="dropdown-dot"></span>Asset Management</a>
-      </div>
-    </div>
-    <a href="trash-runners.html" class="nav-link">Valet Trash Service</a>
-    <a class="nav-link" href="vending.html">Vending Machines</a>
-    <div class="nav-item">
-      <a class="nav-link" href="how-it-works.html">How It Works <span class="arrow">▾</span></a>
-      <div class="dropdown">
-        <a class="dropdown-item" href="how-it-works.html#delivery"><span class="dropdown-dot"></span>Parcel Delivery</a>
-        <a class="dropdown-item" href="how-it-works.html#food"><span class="dropdown-dot"></span>Food Pickup</a>
-        <a class="dropdown-item" href="how-it-works.html#asset"><span class="dropdown-dot"></span>Asset Management</a>
+        <a class="dropdown-item" href="pizza-lockers.html"><span class="dropdown-dot"></span>Pizza Lockers</a>
+        <a class="dropdown-item" href="asset-lockers.html"><span class="dropdown-dot"></span>Asset &amp; Tool Lockers</a>
       </div>
     </div>
     <div class="nav-item">
-      <a class="nav-link" href="markets.html">Markets <span class="arrow">▾</span></a>
+      <a class="nav-link" href="markets.html" data-nav="markets">Who We Serve <span class="arrow">▾</span></a>
       <div class="dropdown">
-        <a class="dropdown-item" href="markets.html#multifamily"><span class="dropdown-dot"></span>Multifamily / Apartments</a>
-        <a class="dropdown-item" href="markets.html#food"><span class="dropdown-dot"></span>Food &amp; Restaurant</a>
-        <a class="dropdown-item" href="markets.html#corporate"><span class="dropdown-dot"></span>Corporate / Enterprise</a>
+        <a class="dropdown-item" href="markets.html#multifamily"><span class="dropdown-dot"></span>Apartments &amp; Multifamily</a>
+        <a class="dropdown-item" href="markets.html#food"><span class="dropdown-dot"></span>Restaurants &amp; Food Service</a>
+        <a class="dropdown-item" href="markets.html#corporate"><span class="dropdown-dot"></span>Offices &amp; Industrial</a>
       </div>
     </div>
-    <div class="nav-item"><a class="nav-link" href="contact.html">Contact</a></div>
+    <div class="nav-item"><a class="nav-link" href="how-it-works.html" data-nav="how">How It Works</a></div>
+    <div class="nav-item">
+      <a class="nav-link" href="vending.html" data-nav="services">Property Services <span class="arrow">▾</span></a>
+      <div class="dropdown">
+        <a class="dropdown-item" href="vending.html"><span class="dropdown-dot"></span>Vending Placement</a>
+        <a class="dropdown-item" href="trash-runners.html"><span class="dropdown-dot"></span>Valet Trash Service</a>
+      </div>
+    </div>
+    <div class="nav-item"><a class="nav-link" href="about.html" data-nav="about">About</a></div>
   </div>
-  <a href="contact.html" class="nav-cta">Get a Quote</a>
-  <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Open menu">&#9776;</button>
+  <a href="contact.html" class="nav-cta">Request a Quote</a>
+  <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   <div class="mobile-menu" id="mobileMenu">
-    <a class="mm-link" href="parcel-lockers.html">Locker Solutions</a>
-    <a class="mm-link" href="vending.html">Vending Machines</a>
-    <a class="mm-link" href="trash-runners.html">Valet Trash Service</a>
+    <a class="mm-link" href="parcel-lockers.html">Parcel Lockers</a>
+    <a class="mm-link" href="food-lockers.html">Food &amp; Restaurant Lockers</a>
+    <a class="mm-link" href="markets.html">Who We Serve</a>
     <a class="mm-link" href="how-it-works.html">How It Works</a>
-    <a class="mm-link" href="markets.html">Markets</a>
-    <a class="mm-link" href="contact.html">Contact</a>
-    <a class="mm-link mm-cta" href="contact.html">Get a Quote</a>
+    <a class="mm-link" href="vending.html">Vending &amp; Valet Trash</a>
+    <a class="mm-link" href="about.html">About</a>
+    <a class="mm-link mm-cta" href="contact.html">Request a Quote</a>
   </div>
 </nav>
 <script>function toggleMobileMenu(){var m=document.getElementById('mobileMenu');if(m)m.classList.toggle('open');}</script>
@@ -451,7 +450,7 @@
     <h2 class="cta-title">Ready to Take the Wait<br>Out of Takeout?</h2>
     <p class="cta-sub">Tell us your order volume and floor plan — we'll spec the right locker or pod and quote it for your Houston location.</p>
     <div class="cta-btns">
-      <a href="contact.html" class="btn-primary">Request a Quote →</a>
+      <a href="contact.html" class="btn-primary">Request a pickup locker quote →</a>
       <a href="how-it-works.html#food" class="btn-outline">See How It Works</a>
     </div>
   </section>
@@ -460,15 +459,15 @@
 <footer>
 <div class="footer-main">
 <div class="footer-brand">
-<div class="footer-logo"><svg width="28" height="36" viewBox="0 0 28 36" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="0" width="24" height="34" rx="2" fill="none" stroke="#00C4A1" stroke-width="1.5"/><rect x="5" y="3" width="7" height="6" rx="1" fill="rgba(0,196,161,0.8)"/><rect x="15" y="3" width="7" height="6" rx="1" fill="rgba(0,196,161,0.5)"/><rect x="5" y="12" width="7" height="6" rx="1" fill="rgba(0,196,161,0.5)"/><rect x="15" y="12" width="7" height="6" rx="1" fill="rgba(0,196,161,0.3)"/><rect x="5" y="21" width="17" height="4" rx="1" fill="rgba(0,196,161,0.25)"/><rect x="5" y="28" width="17" height="3" rx="1" fill="rgba(0,196,161,0.15)"/></svg></div>
+<div class="footer-logo"><svg width="28" height="36" viewBox="0 0 28 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="0" width="24" height="34" rx="2" fill="none" stroke="#00C4A1" stroke-width="1.5"/><rect x="5" y="3" width="7" height="6" rx="1" fill="rgba(0,196,161,0.8)"/><rect x="15" y="3" width="7" height="6" rx="1" fill="rgba(0,196,161,0.5)"/><rect x="5" y="12" width="7" height="6" rx="1" fill="rgba(0,196,161,0.5)"/><rect x="15" y="12" width="7" height="6" rx="1" fill="rgba(0,196,161,0.3)"/><rect x="5" y="21" width="17" height="4" rx="1" fill="rgba(0,196,161,0.25)"/><rect x="5" y="28" width="17" height="3" rx="1" fill="rgba(0,196,161,0.15)"/></svg></div>
 <div style="margin-top:10px;"><div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;letter-spacing:0.08em;color:#fff;">ZEN <span style="color:#00C4A1;">LOCKERS</span></div><div style="font-size:9px;letter-spacing:0.2em;color:rgba(255,255,255,0.35);margin-top:2px;">PACKAGE PICKUP, PEACE OF MIND</div></div>
-<p class="footer-tagline">Smart locker solutions for Houston &amp; Texas. Certified, local, reliable.</p>
+<p class="footer-tagline">Smart parcel and food lockers for Houston properties &mdash; quoted, installed, and supported locally.</p>
 <div class="footer-social"><a href="mailto:jay.hughes@zenlockers.com" title="Email">@</a><a href="tel:8327242007" title="Call">&#9742;</a></div>
 </div>
 <div class="footer-cols">
-<div class="footer-col"><h4>Solutions</h4><ul><li><a href="parcel-lockers.html">Parcel Lockers</a></li><li><a href="food-lockers.html">Food &amp; Grocery Lockers</a></li><li><a href="pizza-lockers.html">Pizza Lockers</a></li><li><a href="pickup-lockers.html">Restaurant Pickup Lockers</a></li><li><a href="asset-lockers.html">Asset Management</a></li><li><a href="vending.html">Vending Machines</a></li><li><a href="trash-runners.html">Valet Trash Service</a></li></ul></div>
-<div class="footer-col"><h4>Markets</h4><ul><li><a href="markets.html#multifamily">Multifamily &amp; Apartments</a></li><li><a href="markets.html#food">Food &amp; Restaurant</a></li><li><a href="markets.html#corporate">Corporate &amp; Enterprise</a></li></ul></div>
-<div class="footer-col"><h4>Company</h4><ul><li><a href="index.html">About Zen Lockers</a></li><li><a href="how-it-works.html">How It Works</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="contact.html">Get a Quote</a></li></ul></div>
+<div class="footer-col"><h4>Lockers</h4><ul><li><a href="parcel-lockers.html">Parcel Lockers</a></li><li><a href="food-lockers.html">Food &amp; Grocery Lockers</a></li><li><a href="pickup-lockers.html">Restaurant Pickup Lockers</a></li><li><a href="pizza-lockers.html">Pizza Lockers</a></li><li><a href="asset-lockers.html">Asset &amp; Tool Lockers</a></li></ul></div>
+<div class="footer-col"><h4>Who We Serve</h4><ul><li><a href="markets.html#multifamily">Apartments &amp; Multifamily</a></li><li><a href="markets.html#food">Restaurants &amp; Food Service</a></li><li><a href="markets.html#corporate">Offices &amp; Industrial</a></li></ul></div>
+<div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Zen Lockers</a></li><li><a href="how-it-works.html">How It Works</a></li><li><a href="vending.html">Vending Placement</a></li><li><a href="trash-runners.html">Valet Trash Service</a></li><li><a href="contact.html">Request a Quote</a></li></ul></div>
 <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:jay.hughes@zenlockers.com">jay.hughes@zenlockers.com</a></li><li><a href="tel:8327242007">832 724 2007</a></li><li><span>3050 Post Oak Blvd, Suite 510-U60<br>Houston, TX 77056</span></li></ul></div>
 </div>
 </div>
@@ -477,6 +476,7 @@
 <div class="footer-legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
 </div>
 </footer>
+
 <script>
 (function(){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(function(el){o.observe(el)});})();
 </script>

@@ -4,3 +4,6 @@ Pictures/parcel-install.jpg.jpg
 
 _save-vending-images.html
 _*.html
+node_modules/
+package.json
+package-lock.json
