@@ -118,7 +118,7 @@
 <div class="cf-row"><div class="cf-group"><label>First Name</label><input type="text" name="first_name" placeholder="Your first name"/></div><div class="cf-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Your last name"/></div></div>
 <div class="cf-group"><label>Email Address</label><input type="email" name="email" required placeholder="you@company.com"/></div>
 <div class="cf-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="832 000 0000"/></div>
-<div class="cf-group"><label>Property Type</label><select name="property_type"><option value="">Select your market...</option><option>Apartments / Multifamily</option><option>Restaurant / Food Service</option><option>Office / Industrial</option><option>Investor / Partnership inquiry</option><option>Other</option></select></div>
+<div class="cf-group"><label>Property Type</label><select name="property_type"><option value="">Select your market...</option><option>Apartments / Multifamily</option><option>Restaurant / Food Service</option><option>Office / Industrial</option><option>College / University / School</option><option>Investor / Partnership inquiry</option><option>Other</option></select></div>
 <div class="cf-group"><label>Size <span style="opacity:.5;font-weight:300;text-transform:none;letter-spacing:0">(units, doors, or daily orders — optional)</span></label><input type="text" name="size" placeholder="e.g. 240 units, or ~80 to-go orders/day"/></div>
 <div class="cf-group"><label>Message</label><textarea name="message" placeholder="Where would the lockers go, and what problem are you trying to solve?"></textarea></div>
 <input type="hidden" name="access_key" value="dc651836-17c9-4637-9c58-2e515132b534"/>
@@ -131,10 +131,8 @@
 </form>
 <script>
 (function(){
-  /* ▼ SET THIS once: paste your Web3Forms access key into the hidden "access_key"
-     field in the form above (get it free at https://web3forms.com — it emails
-     submissions to the address you registered). Until then, the form opens the
-     visitor's email app pre-filled to your inbox. */
+  /* Submissions go through Web3Forms (access_key in the hidden field above). No mailto fallback:
+     if the key is ever missing, the form shows an on-page error with our contact info instead. */
   var INBOX = "jay.hughes@zenlockers.com";
 
   var form = document.getElementById('quoteForm');
@@ -150,7 +148,7 @@
     if(!email || email.indexOf('@') === -1){ show('Please enter a valid email so we can reply.', false); return; }
 
     var key = (data.get('access_key')||'').trim();
-    var configured = key && key.indexOf('dc651836-17c9-4637-9c58-2e515132b534') === -1;
+    var configured = key.length > 0;
     if(configured){
       var btn = form.querySelector('.cf-submit'); var label = btn.innerHTML;
       btn.disabled = true; btn.innerHTML = 'Sending…';
@@ -163,18 +161,7 @@
         .catch(function(){ show('Network error. Please email us directly at ' + INBOX + '.', false); })
         .finally(function(){ btn.disabled = false; btn.innerHTML = label; });
     } else {
-      var body = [
-        'Name: ' + name,
-        'Email: ' + email,
-        'Phone: ' + (data.get('phone')||''),
-        'Property Type: ' + (data.get('property_type')||''),
-        'Size: ' + (data.get('size')||''),
-        '', (data.get('message')||'')
-      ].join('\n');
-      show('Opening your email app to send your request to our team… If nothing happens, email us at ' + INBOX + '.', true);
-      window.location.href = 'mailto:' + INBOX +
-        '?subject=' + encodeURIComponent('Quote request — ' + (name || email)) +
-        '&body=' + encodeURIComponent(body);
+      show('This form is temporarily unavailable. Please email us at ' + INBOX + ' or call 832 724 2007.', false);
     }
   });
 })();
