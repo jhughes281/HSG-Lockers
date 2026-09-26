@@ -39,99 +39,137 @@
   }
 }
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=Inter+Tight:wght@400;450;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css?v=daylight1">
 <style>
 /* ── HOME: hero ── */
-.hero{min-height:auto;padding:140px 40px 72px;text-align:left;align-items:stretch;}
-.hero-inner{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;}
-.hero-eyebrow{margin-bottom:22px;}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5.2vw,68px);font-weight:300;line-height:1.05;letter-spacing:0.01em;margin-bottom:22px;}
-.hero h1 em{font-style:italic;color:var(--teal);}
-.hero-sub{margin:0 0 36px;max-width:520px;text-align:left;font-size:15px;color:rgba(255,255,255,0.6);}
-.hero-btns{justify-content:flex-start;}
-.hero-photo{position:relative;border-radius:2px;overflow:hidden;border:1px solid rgba(0,196,161,0.25);box-shadow:0 30px 80px rgba(0,0,0,.5);}
-.hero-photo img{width:100%;display:block;}
-.hero-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:12px 16px;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.75);background:linear-gradient(to top,rgba(13,27,46,0.9),rgba(13,27,46,0));}
-.hero-collage{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.hero-collage .hero-photo{margin:0;}
-.hero-collage .hc-main{grid-column:1/-1;}
-.hero-collage .hc-sm img{height:148px;object-fit:cover;}
-.hero-collage .hc-sm figcaption{padding:8px 12px;font-size:9.5px;}
-@keyframes heroIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
-.hero-collage .hc-main{animation:heroIn .7s ease .1s both;}
-.hero-collage .hc-sm:nth-child(2){animation:heroIn .7s ease .32s both;}
-.hero-collage .hc-sm:nth-child(3){animation:heroIn .7s ease .48s both;}
-@media (prefers-reduced-motion:reduce){.hero-collage .hc-main,.hero-collage .hc-sm:nth-child(2),.hero-collage .hc-sm:nth-child(3){animation:none;}}
-/* ── fact strip ── */
-.fact-strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--navy-mid);}
-.fact-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);}
-.fact{padding:24px 28px;border-right:1px solid var(--border);}
-.fact:last-child{border-right:none;}
-.fact b{display:block;font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--gold-light);line-height:1.1;}
-.fact span{display:block;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);margin-top:6px;}
+.hero{min-height:auto;padding:138px 40px 84px;}
+.hero-inner{max-width:1120px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.08fr 0.92fr;gap:64px;align-items:center;}
+.hero-eyebrow{display:flex;align-items:center;gap:14px;}
+.hero-eyebrow::after{content:'';width:64px;height:1px;background:var(--line);}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(40px,5vw,64px);font-weight:560;line-height:1.04;letter-spacing:-0.015em;margin-bottom:24px;color:var(--ink);}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--patina);}
+.hero-sub{margin:0 0 34px;}
+.hero-proof{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);display:flex;gap:34px;flex-wrap:wrap;}
+.hero-proof span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;color:var(--slate);}
+.hero-proof b{color:var(--ink);font-weight:600;}
+
+/* ── the locker face (signature) ── */
+.locker-face{position:relative;}
+.lf-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:104px;gap:5px;}
+.lf-door{position:relative;background:var(--card);border:1px solid var(--line);border-radius:3px;}
+.lf-num{position:absolute;top:7px;left:9px;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:0.08em;color:var(--slate);}
+.lf-key{position:absolute;bottom:9px;right:9px;width:10px;height:14px;}
+.lf-photo{position:relative;border-radius:3px;overflow:hidden;border:1px solid var(--ink);box-shadow:0 10px 26px rgba(18,34,47,0.16);}
+.lf-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+.lf-main{grid-column:2/4;grid-row:1/3;}
+.lf-hotel{grid-column:1/3;grid-row:3/4;}
+.lf-rest{grid-column:3/5;grid-row:4/5;}
+.lf-patina{background:var(--patina);border-color:var(--patina);}
+.lf-patina .lf-num{color:rgba(253,252,248,0.7);}
+.lf-ink{background:var(--ink);border-color:var(--ink);display:flex;align-items:center;justify-content:center;}
+.lf-ink span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--signal);}
+.lf-brass{background:var(--brass-tint);border-color:#D9BC7E;}
+.lf-plinth{height:9px;background:var(--ink);border-radius:0 0 4px 4px;margin:5px 4px 0;}
+.lf-caption{margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--slate);text-align:right;}
+@keyframes doorIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+.lf-grid>*{animation:doorIn .5s ease both;}
+.lf-grid>*:nth-child(1){animation-delay:.05s}.lf-grid>*:nth-child(2){animation-delay:.1s}
+.lf-grid>*:nth-child(3){animation-delay:.15s}.lf-grid>*:nth-child(4){animation-delay:.2s}
+.lf-grid>*:nth-child(5){animation-delay:.25s}.lf-grid>*:nth-child(6){animation-delay:.3s}
+.lf-grid>*:nth-child(7){animation-delay:.35s}.lf-grid>*:nth-child(8){animation-delay:.4s}
+.lf-grid>*:nth-child(9){animation-delay:.45s}.lf-grid>*:nth-child(10){animation-delay:.5s}
+.lf-grid>*:nth-child(11){animation-delay:.55s}.lf-grid>*:nth-child(12){animation-delay:.6s}
+@media (prefers-reduced-motion:reduce){.lf-grid>*{animation:none;}}
+
+/* ── ledger (real facts, quiet) ── */
+.ledger{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--card);}
+.ledger-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);}
+.ledger-item{padding:20px 28px;border-right:1px solid var(--line);}
+.ledger-item:last-child{border-right:none;}
+.ledger-item b{display:block;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--ink);letter-spacing:0.02em;}
+.ledger-item span{display:block;font-size:11.5px;color:var(--slate);margin-top:4px;}
+
 /* ── segments ── */
-.seg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:44px;}
-.seg{background:var(--navy);padding:32px 28px;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:background .25s;}
-.seg:hover{background:var(--navy-light);}
-.seg-img{aspect-ratio:16/10;overflow:hidden;border:1px solid var(--border);margin-bottom:22px;background:var(--navy-mid);}
-.seg-img img{width:100%;height:100%;object-fit:cover;display:block;}
-.seg-img.pod{background:#0D1B2E;}.seg-img.pod img{object-fit:contain;}
-.seg-kicker{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:8px;}
-.seg-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;margin-bottom:10px;line-height:1.15;}
-.seg-desc{font-size:13px;color:var(--text-muted);font-weight:300;line-height:1.75;flex:1;}
-.seg-link{margin-top:20px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);}
-/* ── doorstep vs locker ── */
-.pp-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:36px;}
-.pp-card{background:var(--navy);padding:28px 26px;}
-.pp-card h3{font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px;font-weight:500;}
-.pp-card.bad h3{color:#ff9b7b}.pp-card.good h3{color:var(--teal)}
-.pp-li{display:flex;gap:10px;align-items:flex-start;color:rgba(255,255,255,0.68);font-size:14px;line-height:1.6;padding:6px 0}
-.pp-card.bad .pp-li::before{content:"\2715";color:#ff9b7b;flex-shrink:0}
-.pp-card.good .pp-li::before{content:"\2713";color:var(--teal);flex-shrink:0}
-/* ── founder ── */
-.founder{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:center;}
-.founder-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.6vw,30px);font-weight:300;line-height:1.35;color:#fff;font-style:italic;}
-.founder-quote::before{content:"\201C";color:var(--teal);margin-right:4px;}
-.founder-body{font-size:14.5px;color:rgba(255,255,255,0.65);line-height:1.85;font-weight:300;}
-.founder-sig{margin-top:22px;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);}
-.founder-sig span{display:block;color:var(--text-muted);margin-top:3px;letter-spacing:0.1em;}
+.seg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:48px;}
+.seg{text-decoration:none;color:inherit;display:flex;flex-direction:column;border-top:2px solid var(--ink);padding-top:22px;transition:border-color .2s;}
+.seg:hover{border-top-color:var(--patina);}
+.seg-img{aspect-ratio:16/11;overflow:hidden;border:1px solid var(--line);border-radius:3px;margin-bottom:20px;background:var(--card);}
+.seg-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
+.seg:hover .seg-img img{transform:scale(1.025);}
+.seg-img.pod img{object-fit:contain;padding:12px;}
+.seg-kicker{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--patina);margin-bottom:8px;}
+.seg-title{font-family:'Fraunces',serif;font-size:23px;font-weight:560;margin-bottom:10px;line-height:1.18;color:var(--ink);}
+.seg-desc{font-size:13.5px;color:var(--slate);line-height:1.75;flex:1;}
+.seg-link{margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--patina);}
+.seg:hover .seg-link{color:var(--ink);}
+
+/* ── doorstep vs locker ledger ── */
+.pp-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:3px;overflow:hidden;margin-top:40px;background:var(--card);}
+.pp-card{padding:30px 30px 26px;}
+.pp-card.bad{border-right:1px solid var(--line);}
+.pp-card h3{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px;font-weight:600;}
+.pp-card.bad h3{color:var(--slate);}
+.pp-card.good h3{color:var(--patina);}
+.pp-li{display:flex;gap:12px;align-items:baseline;color:var(--ink);font-size:14px;line-height:1.6;padding:8px 0;border-top:1px solid var(--line);}
+.pp-li:first-of-type{border-top:none;}
+.pp-card.bad .pp-li{color:var(--slate);}
+.pp-card.bad .pp-li::before{content:"\2715";color:var(--slate);font-size:11px;flex-shrink:0;}
+.pp-card.good .pp-li::before{content:"\2713";color:var(--patina);font-weight:700;flex-shrink:0;}
+
+/* ── founder ink band ── */
+.ink-band{background:var(--ink);color:#F5F2EA;}
+.ink-band .content-section{padding-top:84px;padding-bottom:84px;}
+.founder{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:center;}
+.ink-band .sec-label{color:var(--signal);}
+.ink-band .sec-label::after{background:rgba(245,242,234,0.18);}
+.founder-quote{font-family:'Fraunces',serif;font-size:clamp(23px,2.6vw,31px);font-weight:500;font-style:italic;line-height:1.35;color:#F5F2EA;}
+.founder-quote::before{content:"\201C";color:var(--signal);margin-right:4px;}
+.founder-body{font-size:14.5px;color:rgba(245,242,234,0.72);line-height:1.85;}
+.founder-sig{margin-top:22px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--brass-tint);}
+.founder-sig span{display:block;color:rgba(245,242,234,0.5);margin-top:4px;letter-spacing:0.08em;}
+
 /* ── process ── */
-.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:44px;}
-.proc{background:var(--navy);padding:30px 26px;}
-.proc-num{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;color:var(--teal);opacity:.55;line-height:1;margin-bottom:14px;}
-.proc-title{font-size:14px;font-weight:500;margin-bottom:8px;}
-.proc-desc{font-size:13px;color:var(--text-muted);font-weight:300;line-height:1.7;}
-.proc-note{margin-top:18px;font-size:12px;color:var(--text-muted);}
-.proc-note b{color:rgba(255,255,255,0.8);font-weight:500;}
-/* ── certs ── */
-.cert-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;}
-.cert-chip{font-size:12px;letter-spacing:.06em;color:rgba(255,255,255,0.8);border:1px solid var(--border);padding:9px 16px;background:var(--navy-mid);}
-.cert-chip b{color:var(--gold-light);font-weight:600;margin-right:6px;}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:48px;}
+.proc{position:relative;padding-top:20px;border-top:1px solid var(--line);}
+.proc::before{content:'';position:absolute;top:-3px;left:0;width:9px;height:5px;background:var(--brass);}
+.proc-num{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:var(--brass);margin-bottom:12px;letter-spacing:0.08em;}
+.proc-title{font-family:'Fraunces',serif;font-size:19px;font-weight:560;margin-bottom:8px;color:var(--ink);}
+.proc-desc{font-size:13.5px;color:var(--slate);line-height:1.7;}
+.proc-note{margin-top:36px;font-size:13px;color:var(--slate);border-left:2px solid var(--brass-tint);padding-left:16px;}
+.proc-note b{color:var(--ink);font-weight:600;}
+
 /* ── team ── */
-.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:40px;}
-.team-card{background:var(--navy);padding:34px 30px;}
-.team-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:#fff;}
-.team-role{color:var(--teal);font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-top:6px;}
-.team-bio{color:rgba(255,255,255,0.6);font-size:14px;line-height:1.75;margin-top:16px;font-weight:300;}
-.team-link{display:inline-block;margin-top:18px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);text-decoration:none;}
-.team-link:hover{color:var(--gold-light);}
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px;}
+.team-card{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:32px 30px;}
+.team-name{font-family:'Fraunces',serif;font-size:24px;font-weight:560;color:var(--ink);}
+.team-role{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--patina);margin-top:6px;}
+.team-bio{color:var(--slate);font-size:14px;line-height:1.75;margin-top:16px;}
+.team-link{display:inline-block;margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--patina);text-decoration:none;}
+.team-link:hover{color:var(--ink);}
+
 /* ── also ── */
-.also{max-width:1100px;margin:0 auto;padding:0 40px 80px;}
-.also-box{border:1px solid var(--border);background:var(--navy-mid);padding:26px 30px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
-.also-box p{font-size:14px;color:rgba(255,255,255,0.65);font-weight:300;margin:0;}
-.also-box p b{color:#fff;font-weight:500;}
+.also{max-width:1120px;margin:0 auto;padding:0 40px 88px;}
+.also-box{border:1px solid var(--line);background:var(--card);border-radius:3px;padding:24px 30px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.also-box p{font-size:13.5px;color:var(--slate);margin:0;max-width:640px;}
+.also-box p b{color:var(--ink);font-weight:600;}
 .also-links{display:flex;gap:22px;}
-.also-links a{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);text-decoration:none;}
-.also-links a:hover{color:var(--gold-light);}
+.also-links a{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--patina);text-decoration:none;}
+.also-links a:hover{color:var(--ink);}
+
 @media(max-width:900px){
-  .hero{padding:110px 20px 56px;}
-  .hero-inner{grid-template-columns:1fr;gap:32px;}
-  .fact-inner{grid-template-columns:1fr 1fr;}
-  .fact:nth-child(2){border-right:none;}
-  .fact{border-bottom:1px solid var(--border);}
+  .hero{padding:108px 20px 56px;}
+  .hero-inner{grid-template-columns:1fr;gap:44px;}
+  .lf-grid{grid-auto-rows:88px;}
+  .ledger-inner{grid-template-columns:1fr 1fr;}
+  .ledger-item:nth-child(2){border-right:none;}
+  .ledger-item{border-bottom:1px solid var(--line);}
+  .ledger-item:nth-child(3),.ledger-item:nth-child(4){border-bottom:none;}
   .seg-grid,.proc-grid,.team-grid,.pp-grid{grid-template-columns:1fr;}
-  .founder{grid-template-columns:1fr;gap:24px;}
+  .pp-card.bad{border-right:none;border-bottom:1px solid var(--line);}
+  .founder{grid-template-columns:1fr;gap:28px;}
 }
 </style>
 </head>
@@ -140,14 +178,14 @@
   <a class="nav-logo" href="index.html">
     <svg width="38" height="38" viewBox="0 0 152 152" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <g transform="translate(76 76)">
-        <circle cx="0" cy="0" r="66" fill="none" stroke="#00C4A1" stroke-width="8"/>
-        <circle cx="0" cy="0" r="60" fill="#ffffff"/>
-        <path fill="#1e3a5f" d="M0,-60 a60,60 0 0 1 0,120 a30,30 0 0 1 0,-60 a30,30 0 0 0 0,-60 z"/>
-        <g fill="#1e3a5f">
+        <circle cx="0" cy="0" r="66" fill="none" stroke="#0E7A66" stroke-width="8"/>
+        <circle cx="0" cy="0" r="60" fill="#FDFCF8"/>
+        <path fill="#12222F" d="M0,-60 a60,60 0 0 1 0,120 a30,30 0 0 1 0,-60 a30,30 0 0 0 0,-60 z"/>
+        <g fill="#12222F">
           <circle cx="0" cy="-32" r="7"/>
           <path d="M-3.5,-28 L3.5,-28 L6.5,-15 L-6.5,-15 z"/>
         </g>
-        <rect x="-9" y="26" width="18" height="9" rx="4.5" fill="#e4c98f"/>
+        <rect x="-9" y="26" width="18" height="9" rx="4.5" fill="#E4C98F"/>
       </g>
     </svg>
     <div>
@@ -196,49 +234,51 @@
 </nav>
 <script>function toggleMobileMenu(){var m=document.getElementById('mobileMenu');var b=document.querySelector('.menu-toggle');if(m){m.classList.toggle('open');if(b)b.setAttribute('aria-expanded',m.classList.contains('open'));}}</script>
 
-
 <div class="page-section active">
   <section class="hero">
     <div class="hero-inner">
       <div>
         <p class="hero-eyebrow">Houston, Texas &middot; Smart Parcel &amp; Food Lockers</p>
-        <h1>Package theft ends<br>at the <em>locker door.</em></h1>
+        <h1>Package theft ends at the <em>locker door.</em></h1>
         <p class="hero-sub">Zen Lockers quotes, installs, and services smart parcel and food-pickup lockers for Houston apartment communities, restaurants, and workplaces. Every delivery goes behind a locked steel door and opens only for the person it belongs to.</p>
         <div class="hero-btns">
           <a class="btn-primary" href="contact.html">Request a Quote →</a>
           <a class="btn-outline" href="tel:8327242007">Talk to Jay &middot; 832 724 2007</a>
         </div>
       </div>
-      <div class="hero-collage">
-        <figure class="hero-photo hc-main">
-          <img src="Pictures/Smart-parcel-scene01-768x576.webp" alt="Outdoor smart parcel locker bank with weather canopy outside an apartment community" width="768" height="576">
-          <figcaption>Outdoor parcel locker bank with weather canopy &mdash; the hardware we quote, install, and service</figcaption>
-        </figure>
-        <figure class="hero-photo hc-sm">
-          <img src="Pictures/food-locker-hotel-lobby.webp" alt="Concept rendering of a Pickup Pod food locker in a hotel lobby" width="457" height="327" loading="lazy">
-          <figcaption>Lobby &amp; hotel settings</figcaption>
-        </figure>
-        <figure class="hero-photo hc-sm">
-          <img src="Pictures/food-locker-restaurant.webp" alt="Concept rendering of a Pickup Pod food locker in a restaurant dining room" width="457" height="327" loading="lazy">
-          <figcaption>Restaurant pickup</figcaption>
-        </figure>
+      <div class="locker-face" aria-label="Illustration: a locker bank with open doors showing installations">
+        <div class="lf-grid">
+          <div class="lf-door"><span class="lf-num">01</span><svg class="lf-key" viewBox="0 0 10 14" aria-hidden="true"><circle cx="5" cy="4" r="3.4" fill="none" stroke="#5A6672" stroke-width="1.4"/><path d="M3.6 7 L6.4 7 L7.4 13 L2.6 13 Z" fill="#5A6672"/></svg></div>
+          <figure class="lf-photo lf-main"><img src="Pictures/Smart-parcel-scene01-768x576.webp" alt="Outdoor smart parcel locker bank with weather canopy outside an apartment community" width="768" height="576"></figure>
+          <div class="lf-door"><span class="lf-num">02</span></div>
+          <div class="lf-door lf-patina"><span class="lf-num">03</span><svg class="lf-key" viewBox="0 0 10 14" aria-hidden="true"><circle cx="5" cy="4" r="3.4" fill="none" stroke="#FDFCF8" stroke-width="1.4"/><path d="M3.6 7 L6.4 7 L7.4 13 L2.6 13 Z" fill="#FDFCF8"/></svg></div>
+          <div class="lf-door"><span class="lf-num">04</span></div>
+          <figure class="lf-photo lf-hotel"><img src="Pictures/food-locker-hotel-lobby.webp" alt="Concept rendering of a Pickup Pod food locker in a hotel lobby" width="457" height="327" loading="lazy"></figure>
+          <div class="lf-door lf-ink"><span>CODE&nbsp;4482</span></div>
+          <div class="lf-door"><span class="lf-num">05</span></div>
+          <div class="lf-door"><span class="lf-num">06</span><svg class="lf-key" viewBox="0 0 10 14" aria-hidden="true"><circle cx="5" cy="4" r="3.4" fill="none" stroke="#5A6672" stroke-width="1.4"/><path d="M3.6 7 L6.4 7 L7.4 13 L2.6 13 Z" fill="#5A6672"/></svg></div>
+          <div class="lf-door lf-brass"><span class="lf-num">07</span></div>
+          <figure class="lf-photo lf-rest"><img src="Pictures/food-locker-restaurant.webp" alt="Concept rendering of a Pickup Pod food locker in a restaurant dining room" width="457" height="327" loading="lazy"></figure>
+        </div>
+        <div class="lf-plinth" aria-hidden="true"></div>
+        <p class="lf-caption">Real install &middot; concept settings — hardware we quote &amp; service</p>
       </div>
     </div>
   </section>
 
-  <div class="fact-strip">
-    <div class="fact-inner">
-      <div class="fact"><b>Houston</b><span>Based &amp; locally serviced</span></div>
-      <div class="fact"><b>2025</b><span>Founded</span></div>
-      <div class="fact"><b>UL &middot; ETL &middot; NSF</b><span>Listed &amp; certified hardware</span></div>
-      <div class="fact"><b>1 business day</b><span>Quote response</span></div>
+  <div class="ledger">
+    <div class="ledger-inner">
+      <div class="ledger-item"><b>HOUSTON, TX</b><span>Based &amp; locally serviced</span></div>
+      <div class="ledger-item"><b>EST. 2025</b><span>Founded by a working courier</span></div>
+      <div class="ledger-item"><b>UL &middot; ETL &middot; NSF</b><span>Listed &amp; certified hardware</span></div>
+      <div class="ledger-item"><b>1 BUSINESS DAY</b><span>Quote response</span></div>
     </div>
   </div>
 
   <!-- Who we serve -->
   <div class="content-section reveal">
     <p class="sec-label">Who We Serve</p>
-    <h2 class="sec-title">Built for the property <em>you run</em></h2>
+    <h2 class="sec-title">Built for the property you run</h2>
     <p class="sec-body">Three kinds of buildings, one problem: deliveries that need a safe place to wait. Pick yours.</p>
     <div class="seg-grid">
       <a class="seg" href="parcel-lockers.html">
@@ -265,12 +305,10 @@
     </div>
   </div>
 
-  <div class="divider"></div>
-
-  <!-- Why lockers + founder -->
-  <div class="content-section reveal">
+  <!-- Why lockers -->
+  <div class="content-section reveal" style="padding-top:0;">
     <p class="sec-label">Why Smart Lockers</p>
-    <h2 class="sec-title">Your packages shouldn't sit in <em>plain sight</em></h2>
+    <h2 class="sec-title">Your packages shouldn't sit in plain sight</h2>
     <p class="sec-body">A doorstep is not a delivery system. A smart locker takes the package out of sight and behind a locked steel door the moment the courier closes it — and it stays there until the recipient's own code opens it.</p>
     <div class="pp-grid">
       <div class="pp-card bad">
@@ -290,41 +328,40 @@
     </div>
   </div>
 
-  <div class="content-section reveal" style="padding-top:0;">
-    <div class="founder">
-      <div>
-        <p class="sec-label">From the Founder</p>
-        <p class="founder-quote">I deliver packages for a living. I built Zen Lockers to end what I see at the curb every day.</p>
-      </div>
-      <div>
-        <p class="founder-body">Our founder drives for a national carrier. He has watched packages disappear minutes after the delivery photo was taken, and been met at the curb by strangers asking for parcels that weren't theirs. Zen Lockers exists to close that gap: from the driver's hand into locked steel, and only the right code opens the door. That is the whole company — nothing about it is theoretical.</p>
-        <p class="founder-sig">Jay Hughes <span>Founder, Zen Lockers &middot; Houston</span></p>
+  <!-- Founder — the one dark band -->
+  <div class="ink-band">
+    <div class="content-section">
+      <div class="founder">
+        <div>
+          <p class="sec-label">From the Founder</p>
+          <p class="founder-quote">I deliver packages for a living. I built Zen Lockers to end what I see at the curb every day.</p>
+        </div>
+        <div>
+          <p class="founder-body">Our founder drives for a national carrier. He has watched packages disappear minutes after the delivery photo was taken, and been met at the curb by strangers asking for parcels that weren't theirs. Zen Lockers exists to close that gap: from the driver's hand into locked steel, and only the right code opens the door. That is the whole company — nothing about it is theoretical.</p>
+          <p class="founder-sig">Jay Hughes <span>Founder, Zen Lockers &middot; Houston</span></p>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="divider"></div>
 
   <!-- Process -->
   <div class="content-section reveal">
     <p class="sec-label">How Buying Works</p>
-    <h2 class="sec-title">From quote to <em>first delivery</em></h2>
+    <h2 class="sec-title">From quote to first delivery</h2>
     <p class="sec-body">No sales funnel, no call center. You talk to the person who will be on site for the install.</p>
     <div class="proc-grid">
-      <div class="proc"><div class="proc-num">01</div><div class="proc-title">Request a quote</div><div class="proc-desc">Tell us the property type, unit count or daily order volume, and where the lockers would live. We reply within one business day.</div></div>
-      <div class="proc"><div class="proc-num">02</div><div class="proc-title">Site walk &amp; layout</div><div class="proc-desc">We visit, measure, check power and network, and recommend a door mix and placement. You get a drawing and a fixed price.</div></div>
-      <div class="proc"><div class="proc-num">03</div><div class="proc-title">Install &amp; setup</div><div class="proc-desc">Hardware is delivered and installed, software configured, and staff and residents onboarded — we stay until the first packages go in.</div></div>
-      <div class="proc"><div class="proc-num">04</div><div class="proc-title">Local support</div><div class="proc-desc">Service and support from Houston, not a ticket queue. If a door sticks or a screen goes dark, you call us and we come out.</div></div>
+      <div class="proc"><div class="proc-num">STEP 01</div><div class="proc-title">Request a quote</div><div class="proc-desc">Tell us the property type, unit count or daily order volume, and where the lockers would live. We reply within one business day.</div></div>
+      <div class="proc"><div class="proc-num">STEP 02</div><div class="proc-title">Site walk &amp; layout</div><div class="proc-desc">We visit, measure, check power and network, and recommend a door mix and placement. You get a drawing and a fixed price.</div></div>
+      <div class="proc"><div class="proc-num">STEP 03</div><div class="proc-title">Install &amp; setup</div><div class="proc-desc">Hardware is delivered and installed, software configured, and staff and residents onboarded — we stay until the first packages go in.</div></div>
+      <div class="proc"><div class="proc-num">STEP 04</div><div class="proc-title">Local support</div><div class="proc-desc">Service and support from Houston, not a ticket queue. If a door sticks or a screen goes dark, you call us and we come out.</div></div>
     </div>
     <p class="proc-note"><b>Typical lead time:</b> confirmed at quote based on configuration and freight. <b>Pricing:</b> hardware, installation, and software are itemized — no bundled mystery numbers.</p>
   </div>
 
-  <div class="divider"></div>
-
   <!-- Hardware -->
-  <div class="content-section reveal">
+  <div class="content-section reveal" style="padding-top:0;">
     <p class="sec-label">Hardware &amp; Certifications</p>
-    <h2 class="sec-title">Commercial-grade hardware, <em>installed locally</em></h2>
+    <h2 class="sec-title">Commercial-grade hardware, installed locally</h2>
     <p class="sec-body">We don't manufacture lockers — we source them from ISO 9001-certified manufacturers, then handle the part that has to happen in Houston: survey, install, software setup, and service. The certifications below belong to the hardware we install.</p>
     <div class="cert-row">
       <span class="cert-chip"><b>UL</b> Safety listed</span>
@@ -337,12 +374,10 @@
     </div>
   </div>
 
-  <div class="divider"></div>
-
   <!-- Team -->
-  <div class="content-section reveal">
+  <div class="content-section reveal" style="padding-top:0;">
     <p class="sec-label">Who You'll Work With</p>
-    <h2 class="sec-title">Two people, <em>one standard</em></h2>
+    <h2 class="sec-title">Two people, one standard</h2>
     <div class="team-grid">
       <div class="team-card">
         <p class="team-name">Jay Hughes</p>
@@ -368,7 +403,7 @@
 
   <!-- CTA -->
   <section class="cta-section reveal">
-    <h2 class="cta-title">Ready to Bring Smart Lockers<br>to Your Property?</h2>
+    <h2 class="cta-title">Ready to bring smart lockers<br>to your property?</h2>
     <p class="cta-sub">Send us the basics and you'll have a reply, and usually a site-walk time, within one business day.</p>
     <div class="cta-btns">
       <a href="contact.html" class="btn-primary">Request a Quote →</a>
@@ -388,7 +423,7 @@
 <div class="footer-main">
 <div class="footer-brand">
 <div class="footer-logo"><svg width="28" height="36" viewBox="0 0 28 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="0" width="24" height="34" rx="2" fill="none" stroke="#00C4A1" stroke-width="1.5"/><rect x="5" y="3" width="7" height="6" rx="1" fill="rgba(0,196,161,0.8)"/><rect x="15" y="3" width="7" height="6" rx="1" fill="rgba(0,196,161,0.5)"/><rect x="5" y="12" width="7" height="6" rx="1" fill="rgba(0,196,161,0.5)"/><rect x="15" y="12" width="7" height="6" rx="1" fill="rgba(0,196,161,0.3)"/><rect x="5" y="21" width="17" height="4" rx="1" fill="rgba(0,196,161,0.25)"/><rect x="5" y="28" width="17" height="3" rx="1" fill="rgba(0,196,161,0.15)"/></svg></div>
-<div style="margin-top:10px;"><div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;letter-spacing:0.08em;color:#fff;">ZEN <span style="color:#00C4A1;">LOCKERS</span></div><div style="font-size:9px;letter-spacing:0.2em;color:rgba(255,255,255,0.35);margin-top:2px;">PACKAGE PICKUP, PEACE OF MIND</div></div>
+<div style="margin-top:10px;"><div style="font-family:'Fraunces',serif;font-size:21px;font-weight:600;letter-spacing:0.06em;color:#F5F2EA;">ZEN <span style="color:#00C4A1;">LOCKERS</span></div><div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:0.18em;color:rgba(245,242,234,0.4);margin-top:3px;">PACKAGE PICKUP, PEACE OF MIND</div></div>
 <p class="footer-tagline">Smart parcel and food lockers for Houston properties &mdash; quoted, installed, and supported locally.</p>
 <div class="footer-social"><a href="mailto:Jay.Hughes@zenlockers.com" title="Email">@</a><a href="tel:8327242007" title="Call">&#9742;</a></div>
 </div>
@@ -405,8 +440,6 @@
 </div>
 </footer>
 
-
-
 <script>
 // Legacy deep links from the old single-page site → real pages
 (function(){
@@ -419,20 +452,6 @@
     entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
   }, {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
-})();
-</script>
-<!-- ══ Cloudflare Web Analytics (privacy-friendly, cookieless) ══
-     SET THIS once: paste your Web Analytics token below. Until a real token is set, nothing loads. -->
-<script>
-(function(){
-  var CF_TOKEN = "YOUR_CLOUDFLARE_TOKEN";
-  if (CF_TOKEN && CF_TOKEN.indexOf("YOUR_CLOUDFLARE") === -1) {
-    var s = document.createElement('script');
-    s.defer = true;
-    s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
-    s.setAttribute('data-cf-beacon', JSON.stringify({ token: CF_TOKEN }));
-    document.head.appendChild(s);
-  }
 })();
 </script>
 </body>

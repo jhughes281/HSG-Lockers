@@ -13,8 +13,8 @@
 <meta property="og:url" content="https://zenlockers.com/vending.html">
 <meta property="og:image" content="https://zenlockers.com/vending-install.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=Inter+Tight:wght@400;450;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css?v=daylight1">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -134,40 +134,40 @@
   <div class="content-section">
 <style>
 .vending-intro{text-align:center;margin-bottom:48px;}
-.vending-intro p{color:rgba(255,255,255,0.6);font-size:15px;max-width:700px;margin:12px auto 0;}
+.vending-intro p{color:#44525F;font-size:15px;max-width:700px;margin:12px auto 0;}
 .vendor-section{margin-bottom:56px;}
-.vendor-header{display:flex;align-items:center;gap:16px;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.08);}
+.vendor-header{display:flex;align-items:center;gap:16px;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid #DAD3C2;}
 .vendor-badge{padding:4px 12px;border-radius:20px;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;}
-.vendor-badge.ai{background:rgba(0,196,161,0.15);color:#00C4A1;border:1px solid rgba(0,196,161,0.3);}
+.vendor-badge.ai{background:rgba(14,122,102,0.08);color:#0E7A66;border:1px solid rgba(14,122,102,0.35);}
 .vendor-badge.premium{background:rgba(201,168,76,0.15);color:#C9A84C;border:1px solid rgba(201,168,76,0.3);}
-.vendor-badge.classic{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.15);}
-.vendor-name{font-size:20px;font-weight:600;color:#fff;}
-.vendor-tagline{font-size:13px;color:rgba(255,255,255,0.4);margin-left:auto;}
+.vendor-badge.classic{background:#DAD3C2;color:#44525F;border:1px solid #DAD3C2;}
+.vendor-name{font-size:20px;font-weight:600;color:#12222F;}
+.vendor-tagline{font-size:13px;color:#5A6672;margin-left:auto;}
 .vend-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
-.vend-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;overflow:hidden;transition:transform 0.2s,border-color 0.2s;display:flex;flex-direction:column;}
-.vend-card:hover{transform:translateY(-3px);border-color:rgba(0,196,161,0.3);}
+.vend-card{background:#FDFCF8;border:1px solid #DAD3C2;border-radius:14px;overflow:hidden;transition:transform 0.2s,border-color 0.2s;display:flex;flex-direction:column;}
+.vend-card:hover{transform:translateY(-3px);border-color:rgba(14,122,102,0.35);}
 .vend-card-img{height:200px;overflow:hidden;background:rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;}
 .vend-card-img img{width:100%;height:100%;object-fit:contain;padding:12px;box-sizing:border-box;}
 .vend-card-body{padding:18px;flex:1;display:flex;flex-direction:column;}
-.vend-card-brand{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:#00C4A1;margin-bottom:6px;font-weight:600;}
-.vend-card-name{font-size:15px;font-weight:600;color:#fff;margin-bottom:8px;line-height:1.3;}
-.vend-card-desc{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.6;flex:1;}
+.vend-card-brand{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:#0E7A66;margin-bottom:6px;font-weight:600;}
+.vend-card-name{font-size:15px;font-weight:600;color:#12222F;margin-bottom:8px;line-height:1.3;}
+.vend-card-desc{font-size:12px;color:#5A6672;line-height:1.6;flex:1;}
 .vend-card-specs{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px;}
-.vend-spec{background:rgba(255,255,255,0.05);border-radius:4px;padding:3px 8px;font-size:10px;color:rgba(255,255,255,0.5);letter-spacing:0.04em;}
-.vend-card-footer{padding:12px 18px;border-top:1px solid rgba(255,255,255,0.05);display:flex;justify-content:space-between;align-items:center;}
-.vend-price{font-size:13px;font-weight:700;color:#00C4A1;}
-.vend-cta{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);transition:color 0.2s;cursor:pointer;text-decoration:none;}
-.vend-cta:hover{color:#00C4A1;}
+.vend-spec{background:#FDFCF8;border-radius:4px;padding:3px 8px;font-size:10px;color:#5A6672;letter-spacing:0.04em;}
+.vend-card-footer{padding:12px 18px;border-top:1px solid #FDFCF8;display:flex;justify-content:space-between;align-items:center;}
+.vend-price{font-size:13px;font-weight:700;color:#0E7A66;}
+.vend-cta{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#5A6672;transition:color 0.2s;cursor:pointer;text-decoration:none;}
+.vend-cta:hover{color:#0E7A66;}
 @media(max-width:600px){.vend-grid{grid-template-columns:1fr;}.vendor-tagline{display:none;}}
 </style>
 
 <div class="vending-intro">
   <p class="sec-label">OUR VENDING MACHINES</p>
-  <h1 class="sec-title">Vending Placement for <em style="color:#00C4A1;font-style:italic;">Your Property</em></h1>
-  <p>An add-on for properties we already serve with lockers. <strong style="color:#fff;font-weight:500;">How placement works:</strong> we supply the machine, handle delivery and setup, and keep it stocked and serviced — the property provides the spot and the outlet. Pick a machine type below and request placement; we'll confirm fit and terms for your traffic.</p>
+  <h1 class="sec-title">Vending Placement for <em style="color:#0E7A66;font-style:italic;">Your Property</em></h1>
+  <p>An add-on for properties we already serve with lockers. <strong style="color:#12222F;font-weight:500;">How placement works:</strong> we supply the machine, handle delivery and setup, and keep it stocked and serviced — the property provides the spot and the outlet. Pick a machine type below and request placement; we'll confirm fit and terms for your traffic.</p>
 </div>
 
-<div style="display:flex;gap:24px;align-items:center;background:rgba(0,196,161,0.06);border:1px solid rgba(0,196,161,0.25);border-radius:16px;padding:20px;margin-bottom:48px;flex-wrap:wrap;"><img src="vending-install.jpg" alt="Zen Lockers AI smart-checkout cooler installed at a Houston property" style="width:210px;max-width:100%;border-radius:12px;display:block;flex-shrink:0;" width="824" height="1100"><div style="flex:1;min-width:240px;"><div style="font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#00C4A1;font-weight:700;margin-bottom:8px;">Now Installed</div><div style="font-family:'Cormorant Garamond',serif;font-size:25px;color:#fff;margin-bottom:8px;">See it in action</div><p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.7;margin:0;">One of our AI smart-checkout coolers, live at a Houston property &mdash; tap to pay, grab, and go. Stocked with snacks and cold drinks, zero staffing required.</p></div></div>
+<div style="display:flex;gap:24px;align-items:center;background:rgba(14,122,102,0.08);border:1px solid rgba(14,122,102,0.35);border-radius:16px;padding:20px;margin-bottom:48px;flex-wrap:wrap;"><img src="vending-install.jpg" alt="Zen Lockers AI smart-checkout cooler installed at a Houston property" style="width:210px;max-width:100%;border-radius:12px;display:block;flex-shrink:0;" width="824" height="1100"><div style="flex:1;min-width:240px;"><div style="font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#0E7A66;font-weight:700;margin-bottom:8px;">Now Installed</div><div style="font-family:'Fraunces',serif;font-size:25px;color:#12222F;margin-bottom:8px;">See it in action</div><p style="font-size:13px;color:#5A6672;line-height:1.7;margin:0;">One of our AI smart-checkout coolers, live at a Houston property &mdash; tap to pay, grab, and go. Stocked with snacks and cold drinks, zero staffing required.</p></div></div>
 <!-- HAHA AI Vending -->
 <div class="vendor-section">
   <div class="vendor-header">
@@ -306,8 +306,8 @@
 <footer>
 <div class="footer-main">
 <div class="footer-brand">
-<div class="footer-logo"><svg width="28" height="36" viewBox="0 0 28 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="0" width="24" height="34" rx="2" fill="none" stroke="#00C4A1" stroke-width="1.5"/><rect x="5" y="3" width="7" height="6" rx="1" fill="rgba(0,196,161,0.8)"/><rect x="15" y="3" width="7" height="6" rx="1" fill="rgba(0,196,161,0.5)"/><rect x="5" y="12" width="7" height="6" rx="1" fill="rgba(0,196,161,0.5)"/><rect x="15" y="12" width="7" height="6" rx="1" fill="rgba(0,196,161,0.3)"/><rect x="5" y="21" width="17" height="4" rx="1" fill="rgba(0,196,161,0.25)"/><rect x="5" y="28" width="17" height="3" rx="1" fill="rgba(0,196,161,0.15)"/></svg></div>
-<div style="margin-top:10px;"><div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;letter-spacing:0.08em;color:#fff;">ZEN <span style="color:#00C4A1;">LOCKERS</span></div><div style="font-size:9px;letter-spacing:0.2em;color:rgba(255,255,255,0.35);margin-top:2px;">PACKAGE PICKUP, PEACE OF MIND</div></div>
+<div class="footer-logo"><svg width="28" height="36" viewBox="0 0 28 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="0" width="24" height="34" rx="2" fill="none" stroke="#00C4A1" stroke-width="1.5"/><rect x="5" y="3" width="7" height="6" rx="1" fill="#0E7A66"/><rect x="15" y="3" width="7" height="6" rx="1" fill="rgba(14,122,102,0.35)"/><rect x="5" y="12" width="7" height="6" rx="1" fill="rgba(14,122,102,0.35)"/><rect x="15" y="12" width="7" height="6" rx="1" fill="rgba(14,122,102,0.35)"/><rect x="5" y="21" width="17" height="4" rx="1" fill="rgba(14,122,102,0.35)"/><rect x="5" y="28" width="17" height="3" rx="1" fill="rgba(14,122,102,0.08)"/></svg></div>
+<div style="margin-top:10px;"><div style="font-family:'Fraunces',serif;font-size:21px;font-weight:600;letter-spacing:0.06em;color:#F5F2EA;">ZEN <span style="color:#00C4A1;">LOCKERS</span></div><div style="font-size:9px;letter-spacing:0.2em;color:#5A6672;margin-top:2px;">PACKAGE PICKUP, PEACE OF MIND</div></div>
 <p class="footer-tagline">Smart parcel and food lockers for Houston properties &mdash; quoted, installed, and supported locally.</p>
 <div class="footer-social"><a href="mailto:Jay.Hughes@zenlockers.com" title="Email">@</a><a href="tel:8327242007" title="Call">&#9742;</a></div>
 </div>
