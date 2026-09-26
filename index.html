@@ -41,141 +41,137 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=Inter+Tight:wght@400;450;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=daylight1">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Inter+Tight:wght@400;450;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css?v=daylight2">
 <style>
-/* ── HOME: hero ── */
-.hero{min-height:auto;padding:138px 40px 84px;}
-.hero-inner{max-width:1120px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.08fr 0.92fr;gap:64px;align-items:center;}
-.hero-eyebrow{display:flex;align-items:center;gap:14px;}
-.hero-eyebrow::after{content:'';width:64px;height:1px;background:var(--line);}
-.hero h1{font-family:'Fraunces',serif;font-size:clamp(40px,5vw,64px);font-weight:560;line-height:1.04;letter-spacing:-0.015em;margin-bottom:24px;color:var(--ink);}
-.hero h1 em{font-style:italic;font-weight:500;color:var(--patina);}
-.hero-sub{margin:0 0 34px;}
-.hero-proof{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);display:flex;gap:34px;flex-wrap:wrap;}
-.hero-proof span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;color:var(--slate);}
-.hero-proof b{color:var(--ink);font-weight:600;}
+/* ── HOME ── */
+.wrap{max-width:1120px;margin:0 auto;padding:0 40px;}
+@media(max-width:768px){.wrap{padding:0 20px;}}
 
-/* ── the locker face (signature) ── */
-.locker-face{position:relative;}
-.lf-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:104px;gap:5px;}
-.lf-door{position:relative;background:var(--card);border:1px solid #CFC7B4;border-radius:3px;box-shadow:inset 0 -2px 0 rgba(18,34,47,0.06);}
-.lf-door::before{content:'';position:absolute;inset:8px;border:1px solid var(--line);border-radius:2px;pointer-events:none;}
-.lf-door::after{content:'';position:absolute;top:50%;left:6px;transform:translateY(-50%);width:2px;height:22px;border-radius:2px;background:var(--line);}
-.lf-num{position:absolute;top:12px;left:14px;font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:600;letter-spacing:0.08em;color:var(--slate);z-index:1;}
-.lf-key{position:absolute;bottom:13px;right:13px;width:10px;height:14px;z-index:1;}
-.lf-patina::before{border-color:rgba(253,252,248,0.25);}
-.lf-patina::after,.lf-ink::after,.lf-brass::after{background:rgba(18,34,47,0.18);}
-.lf-ink::before{border-color:rgba(245,242,234,0.15);}
-.lf-brass::before{border-color:rgba(18,34,47,0.12);}
-.lf-photo{position:relative;border-radius:3px;overflow:hidden;border:1px solid var(--ink);box-shadow:0 10px 26px rgba(18,34,47,0.16);}
-.lf-photo img{width:100%;height:100%;object-fit:cover;display:block;}
-.lf-main{grid-column:2/4;grid-row:1/3;}
-.lf-hotel{grid-column:1/3;grid-row:3/4;}
-.lf-rest{grid-column:3/5;grid-row:4/5;}
-.lf-patina{background:var(--patina);border-color:var(--patina);}
-.lf-patina .lf-num{color:rgba(253,252,248,0.7);}
-.lf-ink{background:var(--ink);border-color:var(--ink);display:flex;align-items:center;justify-content:center;}
-.lf-ink span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--signal);}
-.lf-brass{background:var(--brass-tint);border-color:#D9BC7E;}
-.lf-plinth{height:9px;background:var(--ink);border-radius:0 0 4px 4px;margin:5px 4px 0;}
-.lf-caption{margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--slate);text-align:right;}
-@keyframes doorIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
-.lf-grid>*{animation:doorIn .5s ease both;}
-.lf-grid>*:nth-child(1){animation-delay:.05s}.lf-grid>*:nth-child(2){animation-delay:.1s}
-.lf-grid>*:nth-child(3){animation-delay:.15s}.lf-grid>*:nth-child(4){animation-delay:.2s}
-.lf-grid>*:nth-child(5){animation-delay:.25s}.lf-grid>*:nth-child(6){animation-delay:.3s}
-.lf-grid>*:nth-child(7){animation-delay:.35s}.lf-grid>*:nth-child(8){animation-delay:.4s}
-.lf-grid>*:nth-child(9){animation-delay:.45s}.lf-grid>*:nth-child(10){animation-delay:.5s}
-.lf-grid>*:nth-child(11){animation-delay:.55s}.lf-grid>*:nth-child(12){animation-delay:.6s}
-@media (prefers-reduced-motion:reduce){.lf-grid>*{animation:none;}}
+/* hero */
+.hero{padding:128px 0 64px;}
+.hero-grid{display:grid;grid-template-columns:1fr 1.02fr;gap:52px;align-items:center;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--patina);margin-bottom:20px;}
+.hero-eyebrow::before{content:'';width:22px;height:2px;background:var(--patina);}
+.hero h1{font-family:'Manrope',sans-serif;font-size:clamp(40px,5.2vw,64px);font-weight:800;line-height:1.03;letter-spacing:-0.05em;margin:0 0 20px;color:var(--ink);}
+.hero h1 em{font-style:normal;color:var(--patina);}
+.hero-sub{margin:0 0 28px;max-width:480px;font-size:15.5px;color:var(--slate);line-height:1.75;}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:13px;}
+.hero-proofline{display:flex;align-items:center;gap:10px;margin-top:26px;color:var(--slate);font-size:12.5px;}
+.hero-proofline b{color:var(--ink);}
+.hero-visual{position:relative;min-height:440px;}
+.hero-photo{position:absolute;inset:0 0 26px 26px;overflow:hidden;border-radius:26px;background:var(--tint);box-shadow:0 20px 60px rgba(18,34,47,0.14);}
+.hero-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+.photo-shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,rgba(10,20,16,.58));}
+.photo-caption{position:absolute;left:24px;bottom:20px;color:#fff;}
+.photo-caption span{display:block;font-size:11px;opacity:.85;margin-bottom:4px;}
+.photo-caption strong{font-family:'Manrope',sans-serif;font-weight:700;font-size:19px;letter-spacing:-0.02em;}
+.floating-note{position:absolute;left:0;bottom:0;display:flex;align-items:center;gap:11px;padding:13px 16px;border-radius:15px;background:var(--card);box-shadow:0 12px 35px rgba(18,34,47,0.14);}
+.note-icon{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:var(--sage);color:var(--patina);}
+.note-icon svg{width:19px;height:19px;}
+.floating-note strong{display:block;font-size:12.5px;color:var(--ink);}
+.floating-note small{display:block;margin-top:2px;color:var(--slate);font-size:10.5px;}
 
-/* ── ledger (real facts, quiet) ── */
-.ledger{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--card);}
-.ledger-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);}
-.ledger-item{padding:20px 28px;border-right:1px solid var(--line);}
-.ledger-item:last-child{border-right:none;}
-.ledger-item b{display:block;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--ink);letter-spacing:0.02em;}
-.ledger-item span{display:block;font-size:11.5px;color:var(--slate);margin-top:4px;}
+/* trust strip */
+.trust-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;background:var(--card);}
+.trust-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;}
+.trust-label{color:var(--slate);font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;}
+.trust-items{display:flex;align-items:center;justify-content:flex-end;gap:clamp(18px,4vw,54px);flex-wrap:wrap;}
+.trust-items span{display:inline-flex;align-items:center;gap:8px;color:var(--ink);font-family:'Manrope',sans-serif;font-weight:700;font-size:12.5px;}
+.trust-items svg{width:16px;height:16px;color:var(--patina);}
 
-/* ── segments ── */
-.seg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:48px;}
-.seg{text-decoration:none;color:inherit;display:flex;flex-direction:column;border-top:2px solid var(--ink);padding-top:22px;transition:border-color .2s;}
-.seg:hover{border-top-color:var(--patina);}
-.seg-img{aspect-ratio:16/11;overflow:hidden;border:1px solid var(--line);border-radius:3px;margin-bottom:20px;background:var(--card);}
-.seg-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
-.seg:hover .seg-img img{transform:scale(1.025);}
-.seg-img.pod img{object-fit:contain;padding:12px;}
-.seg-kicker{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--patina);margin-bottom:8px;}
-.seg-title{font-family:'Fraunces',serif;font-size:23px;font-weight:560;margin-bottom:10px;line-height:1.18;color:var(--ink);}
-.seg-desc{font-size:13.5px;color:var(--slate);line-height:1.75;flex:1;}
-.seg-link{margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--patina);}
-.seg:hover .seg-link{color:var(--ink);}
+/* sections */
+.home-section{padding:84px 0;}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:32px;}
+.section-head h2{max-width:600px;margin:12px 0 0;font-family:'Manrope',sans-serif;font-size:clamp(29px,3.8vw,44px);font-weight:800;line-height:1.08;letter-spacing:-0.045em;color:var(--ink);}
+.section-head p{max-width:365px;margin:0;color:var(--slate);line-height:1.7;font-size:14px;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--patina);font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;}
+.eyebrow::before{content:'';width:22px;height:2px;background:var(--patina);}
+@media(max-width:768px){.section-head{display:block;}.section-head p{margin-top:12px;}}
 
-/* ── doorstep vs locker ledger ── */
-.pp-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:3px;overflow:hidden;margin-top:40px;background:var(--card);}
-.pp-card{padding:30px 30px 26px;}
-.pp-card.bad{border-right:1px solid var(--line);}
-.pp-card h3{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px;font-weight:600;}
-.pp-card.bad h3{color:var(--slate);}
-.pp-card.good h3{color:var(--patina);}
-.pp-li{display:flex;gap:12px;align-items:baseline;color:var(--ink);font-size:14px;line-height:1.6;padding:8px 0;border-top:1px solid var(--line);}
-.pp-li:first-of-type{border-top:none;}
-.pp-card.bad .pp-li{color:var(--slate);}
-.pp-card.bad .pp-li::before{content:"\2715";color:var(--slate);font-size:11px;flex-shrink:0;}
-.pp-card.good .pp-li::before{content:"\2713";color:var(--patina);font-weight:700;flex-shrink:0;}
+/* gallery */
+.gallery-section{background:var(--tint);}
+.filter-bar{display:flex;align-items:center;gap:8px;margin-bottom:20px;overflow-x:auto;scrollbar-width:none;}
+.filter-bar::-webkit-scrollbar{display:none;}
+.filter-btn{flex:0 0 auto;border:1px solid rgba(18,34,47,.18);background:transparent;color:var(--slate);border-radius:99px;padding:10px 16px;font-family:'Inter Tight',sans-serif;font-size:12.5px;font-weight:600;transition:.2s;cursor:pointer;}
+.filter-btn:hover,.filter-btn.active{background:var(--patina);border-color:var(--patina);color:#fff;}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.gallery-card{position:relative;overflow:hidden;min-height:250px;border-radius:17px;background:var(--card);isolation:isolate;cursor:zoom-in;border:0;padding:0;text-align:left;}
+.gallery-card[hidden]{display:none;}
+.gallery-card img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;transition:transform .5s;}
+.gallery-card:hover img{transform:scale(1.045);}
+.gallery-card::after{content:"";position:absolute;z-index:1;inset:38% 0 0;background:linear-gradient(transparent,rgba(10,20,16,.72));pointer-events:none;}
+.gallery-info{position:absolute;z-index:2;left:18px;right:18px;bottom:15px;color:#fff;}
+.gallery-info small{display:block;opacity:.85;font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px;font-family:'IBM Plex Mono',monospace;}
+.gallery-info strong{font-family:'Manrope',sans-serif;font-weight:700;font-size:16px;letter-spacing:-0.02em;}
+.gallery-tag{position:absolute;z-index:2;top:13px;left:13px;font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:99px;background:rgba(253,252,248,.92);color:var(--ink);}
+.gallery-tag.real{background:var(--patina);color:#fff;}
+.gallery-note{margin-top:18px;color:var(--slate);font-size:12px;}
 
-/* ── founder ink band ── */
-.ink-band{background:var(--ink);color:#F5F2EA;}
-.ink-band .content-section{padding-top:84px;padding-bottom:84px;}
-.founder{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:center;}
-.ink-band .sec-label{color:var(--signal);}
-.ink-band .sec-label::after{background:rgba(245,242,234,0.18);}
-.founder-quote{font-family:'Fraunces',serif;font-size:clamp(23px,2.6vw,31px);font-weight:500;font-style:italic;line-height:1.35;color:#F5F2EA;}
-.founder-quote::before{content:"\201C";color:var(--signal);margin-right:4px;}
-.founder-body{font-size:14.5px;color:rgba(245,242,234,0.72);line-height:1.85;}
-.founder-sig{margin-top:22px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--brass-tint);}
-.founder-sig span{display:block;color:rgba(245,242,234,0.5);margin-top:4px;letter-spacing:0.08em;}
+/* solutions */
+.solution-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.solution-card{display:block;padding:26px;border:1px solid var(--line);border-radius:19px;background:var(--card);transition:transform .2s,box-shadow .2s;text-decoration:none;color:inherit;}
+.solution-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(18,34,47,.09);}
+.solution-icon{width:46px;height:46px;display:grid;place-items:center;border-radius:14px;background:var(--sage);color:var(--patina);}
+.solution-icon svg{width:23px;height:23px;}
+.solution-card h3{margin:18px 0 9px;font-family:'Manrope',sans-serif;font-weight:800;font-size:18px;letter-spacing:-0.03em;color:var(--ink);}
+.solution-card p{margin:0;color:var(--slate);font-size:13.5px;line-height:1.7;}
+.solution-link{display:inline-flex;align-items:center;gap:7px;margin-top:16px;color:var(--patina);font-size:12.5px;font-weight:700;}
+@media(max-width:850px){.gallery-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.gallery-grid{grid-template-columns:1fr;}.solution-grid{grid-template-columns:1fr;}}
 
-/* ── process ── */
-.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:48px;}
-.proc{position:relative;padding-top:20px;border-top:1px solid var(--line);}
-.proc::before{content:'';position:absolute;top:-3px;left:0;width:9px;height:5px;background:var(--brass);}
-.proc-num{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:var(--brass);margin-bottom:12px;letter-spacing:0.08em;}
-.proc-title{font-family:'Fraunces',serif;font-size:19px;font-weight:560;margin-bottom:8px;color:var(--ink);}
-.proc-desc{font-size:13.5px;color:var(--slate);line-height:1.7;}
-.proc-note{margin-top:36px;font-size:13px;color:var(--slate);border-left:2px solid var(--brass-tint);padding-left:16px;}
-.proc-note b{color:var(--ink);font-weight:600;}
+/* founder band */
+.feature-band{padding:0 0 84px;}
+.feature-panel{position:relative;overflow:hidden;border-radius:26px;padding:52px 48px;background:var(--ink);color:#F5F2EA;}
+.feature-panel::after{content:"";position:absolute;width:400px;height:400px;right:4%;top:-52%;border-radius:50%;border:1px solid rgba(245,242,234,.13);box-shadow:0 0 0 36px rgba(245,242,234,.035),0 0 0 72px rgba(245,242,234,.02);}
+.feature-content{max-width:640px;position:relative;z-index:1;}
+.feature-content .eyebrow{color:var(--signal);}
+.feature-content .eyebrow::before{background:var(--signal);}
+.feature-quote{margin:16px 0 14px;font-family:'Manrope',sans-serif;font-size:clamp(24px,3vw,34px);font-weight:800;line-height:1.18;letter-spacing:-0.04em;}
+.feature-quote em{font-style:normal;color:var(--signal);}
+.feature-body{max-width:560px;margin:0 0 12px;color:rgba(245,242,234,.75);line-height:1.75;font-size:14px;}
+.feature-sig{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass-tint);margin-bottom:24px;}
+@media(max-width:650px){.feature-panel{padding:34px 24px;}.feature-panel::after{right:-45%;top:-15%;}}
 
-/* ── team ── */
-.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px;}
-.team-card{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:32px 30px;}
-.team-name{font-family:'Fraunces',serif;font-size:24px;font-weight:560;color:var(--ink);}
-.team-role{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--patina);margin-top:6px;}
-.team-bio{color:var(--slate);font-size:14px;line-height:1.75;margin-top:16px;}
-.team-link{display:inline-block;margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--patina);text-decoration:none;}
-.team-link:hover{color:var(--ink);}
+/* process */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:40px;}
+.step{border-top:1px solid rgba(18,34,47,.22);padding-top:17px;}
+.step-no{color:var(--patina);font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:11px;letter-spacing:.1em;}
+.step h3{margin:15px 0 8px;font-family:'Manrope',sans-serif;font-weight:800;font-size:16.5px;letter-spacing:-0.02em;color:var(--ink);}
+.step p{margin:0;color:var(--slate);font-size:13px;line-height:1.7;}
+.process-note{margin-top:32px;font-size:13px;color:var(--slate);border-left:2px solid var(--brass-tint);padding-left:16px;max-width:640px;}
+.process-note b{color:var(--ink);font-weight:700;}
+@media(max-width:650px){.process-grid{grid-template-columns:1fr 1fr;gap:24px 16px;}}
 
-/* ── also ── */
-.also{max-width:1120px;margin:0 auto;padding:0 40px 88px;}
-.also-box{border:1px solid var(--line);background:var(--card);border-radius:3px;padding:24px 30px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
-.also-box p{font-size:13.5px;color:var(--slate);margin:0;max-width:640px;}
-.also-box p b{color:var(--ink);font-weight:600;}
-.also-links{display:flex;gap:22px;}
-.also-links a{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--patina);text-decoration:none;}
-.also-links a:hover{color:var(--ink);}
+/* faq */
+.faq-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start;}
+.faq-aside h2{margin:13px 0;font-family:'Manrope',sans-serif;font-size:clamp(30px,3.6vw,42px);font-weight:800;line-height:1.08;letter-spacing:-0.045em;color:var(--ink);}
+.faq-aside p{color:var(--slate);font-size:14px;line-height:1.7;max-width:360px;}
+.faq-aside .btn-primary{margin-top:8px;}
+.faq-item{border-bottom:1px solid var(--line);}
+.faq-question{width:100%;border:0;background:none;padding:19px 0;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:15px;color:var(--ink);font-family:'Manrope',sans-serif;font-weight:700;font-size:14.5px;cursor:pointer;}
+.faq-question svg{flex:0 0 auto;width:18px;height:18px;transition:transform .2s;color:var(--patina);}
+.faq-question[aria-expanded="true"] svg{transform:rotate(45deg);}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+.faq-answer p{padding:0 32px 18px 0;margin:0;color:var(--slate);font-size:13.5px;line-height:1.75;}
+@media(max-width:850px){.faq-layout{grid-template-columns:1fr;gap:30px;}}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;z-index:110;display:none;align-items:center;justify-content:center;padding:5vw;background:rgba(10,20,16,.9);}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:min(1100px,100%);max-height:82vh;border-radius:12px;object-fit:contain;}
+.lightbox-close{position:absolute;top:22px;right:22px;border:0;border-radius:50%;color:#fff;background:rgba(255,255,255,.16);width:44px;height:44px;display:grid;place-items:center;cursor:pointer;}
+.lightbox-close svg{width:21px;height:21px;}
 
 @media(max-width:900px){
-  .hero{padding:108px 20px 56px;}
-  .hero-inner{grid-template-columns:1fr;gap:44px;}
-  .lf-grid{grid-auto-rows:88px;}
-  .ledger-inner{grid-template-columns:1fr 1fr;}
-  .ledger-item:nth-child(2){border-right:none;}
-  .ledger-item{border-bottom:1px solid var(--line);}
-  .ledger-item:nth-child(3),.ledger-item:nth-child(4){border-bottom:none;}
-  .seg-grid,.proc-grid,.team-grid,.pp-grid{grid-template-columns:1fr;}
-  .pp-card.bad{border-right:none;border-bottom:1px solid var(--line);}
-  .founder{grid-template-columns:1fr;gap:28px;}
+  .hero{padding:104px 0 48px;}
+  .hero-grid{grid-template-columns:1fr;gap:38px;}
+  .hero-visual{min-height:380px;}
+  .trust-inner{flex-direction:column;align-items:flex-start;}
+  .trust-items{justify-content:flex-start;}
+}
+@media (prefers-reduced-motion:reduce){
+  .gallery-card img,.solution-card,.faq-question svg{transition:none;}
 }
 </style>
 </head>
@@ -241,186 +237,215 @@
 <script>function toggleMobileMenu(){var m=document.getElementById('mobileMenu');var b=document.querySelector('.menu-toggle');if(m){m.classList.toggle('open');if(b)b.setAttribute('aria-expanded',m.classList.contains('open'));}}</script>
 
 <div class="page-section active">
+
+  <!-- HERO -->
   <section class="hero">
-    <div class="hero-inner">
+    <div class="wrap hero-grid">
       <div>
-        <p class="hero-eyebrow">Houston, Texas &middot; Smart Parcel &amp; Food Lockers</p>
+        <p class="hero-eyebrow">Houston, Texas · Smart Parcel &amp; Food Lockers</p>
         <h1>Package theft ends at the <em>locker door.</em></h1>
         <p class="hero-sub">Zen Lockers quotes, installs, and services smart parcel and food-pickup lockers for Houston apartment communities, restaurants, and workplaces. Every delivery goes behind a locked steel door and opens only for the person it belongs to.</p>
-        <div class="hero-btns">
+        <div class="hero-actions">
           <a class="btn-primary" href="contact.html">Request a Quote →</a>
-          <a class="btn-outline" href="tel:8327242007">Talk to Jay &middot; 832 724 2007</a>
+          <a class="btn-outline" href="#installations">See the lockers in place</a>
         </div>
+        <p class="hero-proofline"><b>Founded by a working courier</b> — built from what he sees at the curb every day.</p>
       </div>
-      <div class="locker-face" aria-label="Illustration: a locker bank with open doors showing installations">
-        <div class="lf-grid">
-          <div class="lf-door"><span class="lf-num">01</span><svg class="lf-key" viewBox="0 0 10 14" aria-hidden="true"><circle cx="5" cy="4" r="3.4" fill="none" stroke="#5A6672" stroke-width="1.4"/><path d="M3.6 7 L6.4 7 L7.4 13 L2.6 13 Z" fill="#5A6672"/></svg></div>
-          <figure class="lf-photo lf-main"><img src="Pictures/Smart-parcel-scene01-768x576.webp" alt="Outdoor smart parcel locker bank with weather canopy outside an apartment community" width="768" height="576"></figure>
-          <div class="lf-door"><span class="lf-num">02</span><svg class="lf-key" viewBox="0 0 10 14" aria-hidden="true"><circle cx="5" cy="4" r="3.4" fill="none" stroke="#5A6672" stroke-width="1.4"/><path d="M3.6 7 L6.4 7 L7.4 13 L2.6 13 Z" fill="#5A6672"/></svg></div>
-          <div class="lf-door lf-patina"><span class="lf-num">03</span><svg class="lf-key" viewBox="0 0 10 14" aria-hidden="true"><circle cx="5" cy="4" r="3.4" fill="none" stroke="#FDFCF8" stroke-width="1.4"/><path d="M3.6 7 L6.4 7 L7.4 13 L2.6 13 Z" fill="#FDFCF8"/></svg></div>
-          <div class="lf-door"><span class="lf-num">04</span><svg class="lf-key" viewBox="0 0 10 14" aria-hidden="true"><circle cx="5" cy="4" r="3.4" fill="none" stroke="#5A6672" stroke-width="1.4"/><path d="M3.6 7 L6.4 7 L7.4 13 L2.6 13 Z" fill="#5A6672"/></svg></div>
-          <figure class="lf-photo lf-hotel"><img src="Pictures/food-locker-hotel-lobby.webp" alt="Concept rendering of a Pickup Pod food locker in a hotel lobby" width="457" height="327" loading="lazy"></figure>
-          <div class="lf-door lf-ink"><span>CODE&nbsp;4482</span></div>
-          <div class="lf-door"><span class="lf-num">05</span><svg class="lf-key" viewBox="0 0 10 14" aria-hidden="true"><circle cx="5" cy="4" r="3.4" fill="none" stroke="#5A6672" stroke-width="1.4"/><path d="M3.6 7 L6.4 7 L7.4 13 L2.6 13 Z" fill="#5A6672"/></svg></div>
-          <div class="lf-door"><span class="lf-num">06</span><svg class="lf-key" viewBox="0 0 10 14" aria-hidden="true"><circle cx="5" cy="4" r="3.4" fill="none" stroke="#5A6672" stroke-width="1.4"/><path d="M3.6 7 L6.4 7 L7.4 13 L2.6 13 Z" fill="#5A6672"/></svg></div>
-          <div class="lf-door lf-brass"><span class="lf-num">07</span><svg class="lf-key" viewBox="0 0 10 14" aria-hidden="true"><circle cx="5" cy="4" r="3.4" fill="none" stroke="#12222F" stroke-width="1.4"/><path d="M3.6 7 L6.4 7 L7.4 13 L2.6 13 Z" fill="#12222F"/></svg></div>
-          <figure class="lf-photo lf-rest"><img src="Pictures/food-locker-restaurant.webp" alt="Concept rendering of a Pickup Pod food locker in a restaurant dining room" width="457" height="327" loading="lazy"></figure>
+      <div class="hero-visual">
+        <div class="hero-photo">
+          <img src="Pictures/Smart-parcel-scene01-768x576.webp" alt="Outdoor smart parcel locker bank with weather canopy outside an apartment community" width="768" height="576">
+          <div class="photo-shade"></div>
+          <div class="photo-caption"><span>Outdoor parcel bank with weather canopy</span><strong>The hardware we quote, install &amp; service</strong></div>
         </div>
-        <div class="lf-plinth" aria-hidden="true"></div>
-        <p class="lf-caption">Real install &middot; concept settings — hardware we quote &amp; service</p>
+        <div class="floating-note">
+          <span class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/><circle cx="12" cy="14" r="1.6" fill="currentColor" stroke="none"/></svg></span>
+          <span><strong>Delivered. Locked. Notified.</strong><small>Only the recipient's code opens it</small></span>
+        </div>
       </div>
     </div>
   </section>
 
-  <div class="ledger">
-    <div class="ledger-inner">
-      <div class="ledger-item"><b>HOUSTON, TX</b><span>Based &amp; locally serviced</span></div>
-      <div class="ledger-item"><b>EST. 2025</b><span>Founded by a working courier</span></div>
-      <div class="ledger-item"><b>UL &middot; ETL &middot; NSF</b><span>Listed &amp; certified hardware</span></div>
-      <div class="ledger-item"><b>1 BUSINESS DAY</b><span>Quote response</span></div>
-    </div>
-  </div>
-
-  <!-- Who we serve -->
-  <div class="content-section reveal">
-    <p class="sec-label">Who We Serve</p>
-    <h2 class="sec-title">Built for the property you run</h2>
-    <p class="sec-body">Three kinds of buildings, one problem: deliveries that need a safe place to wait. Pick yours.</p>
-    <div class="seg-grid">
-      <a class="seg" href="parcel-lockers.html">
-        <div class="seg-img"><img src="Pictures/parcel-locker.png" alt="Smart parcel locker bank for apartment communities" loading="lazy" width="590" height="407"></div>
-        <div class="seg-kicker">Apartments &amp; Multifamily</div>
-        <div class="seg-title">Parcel lockers for residents</div>
-        <div class="seg-desc">Carrier-agnostic package lockers for the mail room, lobby, or breezeway. Residents get a code the moment a package lands; the leasing office stops being a package counter.</div>
-        <span class="seg-link">Parcel lockers →</span>
-      </a>
-      <a class="seg" href="food-lockers.html">
-        <div class="seg-img pod"><img src="images/hatco/pickup-pod-card.webp" alt="Self-service food Pickup Pod locker" loading="lazy" width="655" height="651"></div>
-        <div class="seg-kicker">Restaurants &amp; Food Service</div>
-        <div class="seg-title">Heated &amp; refrigerated pickup lockers</div>
-        <div class="seg-desc">To-go and third-party orders wait hot or cold behind a locked door. Drivers and guests grab and go; nobody crowds the counter, nobody takes the wrong bag.</div>
-        <span class="seg-link">Food &amp; restaurant lockers →</span>
-      </a>
-      <a class="seg" href="asset-lockers.html">
-        <div class="seg-img"><img src="Pictures/locker-render.png" alt="Secure storage and asset lockers for workplaces" loading="lazy" width="116" height="194"></div>
-        <div class="seg-kicker">Offices &amp; Industrial</div>
-        <div class="seg-title">Parcel, asset &amp; tool lockers</div>
-        <div class="seg-desc">Employee deliveries, shared equipment, and controlled hand-offs — each with a code, a timestamp, and a record of who opened what.</div>
-        <span class="seg-link">Workplace lockers →</span>
-      </a>
-    </div>
-  </div>
-
-  <!-- Why lockers -->
-  <div class="content-section reveal" style="padding-top:0;">
-    <p class="sec-label">Why Smart Lockers</p>
-    <h2 class="sec-title">Your packages shouldn't sit in plain sight</h2>
-    <p class="sec-body">A doorstep is not a delivery system. A smart locker takes the package out of sight and behind a locked steel door the moment the courier closes it — and it stays there until the recipient's own code opens it.</p>
-    <div class="pp-grid">
-      <div class="pp-card bad">
-        <h3>On the doorstep</h3>
-        <div class="pp-li">Visible to anyone who walks or drives by</div>
-        <div class="pp-li">Anyone can pick it up — no questions asked</div>
-        <div class="pp-li">Exposed to rain, heat, and Houston humidity</div>
-        <div class="pp-li">A "delivered" photo is the only record of what happened</div>
-      </div>
-      <div class="pp-card good">
-        <h3>In a Zen Locker</h3>
-        <div class="pp-li">Out of sight, behind a locked steel door</div>
-        <div class="pp-li">Opens only with the recipient's QR code or PIN</div>
-        <div class="pp-li">Indoor or weather-rated outdoor placement</div>
-        <div class="pp-li">Every drop-off and pickup logged with time and ID</div>
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="wrap trust-inner">
+      <span class="trust-label">Built for</span>
+      <div class="trust-items">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 21V6l8-3 8 3v15M8 9h2m4 0h2m-8 4h2m4 0h2m-8 4h2m4 0h2"/></svg>Apartments</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 10h18v11H3zM5 10l2-7h10l2 7M8 14h8"/></svg>Restaurants</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6M8 10h.01M16 10h.01"/></svg>Hotels</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 21V4h16v17M8 8h2m4 0h2m-8 4h2m4 0h2m-8 4h2m4 0h2"/></svg>Workplaces</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>UL · ETL · NSF listed</span>
       </div>
     </div>
   </div>
 
-  <!-- Founder — the one dark band -->
-  <div class="ink-band">
-    <div class="content-section">
-      <div class="founder">
+  <!-- GALLERY -->
+  <section class="home-section gallery-section" id="installations">
+    <div class="wrap">
+      <div class="section-head">
         <div>
-          <p class="sec-label">From the Founder</p>
-          <p class="founder-quote">I deliver packages for a living. I built Zen Lockers to end what I see at the curb every day.</p>
+          <span class="eyebrow">The lockers, in place</span>
+          <h2>One locker bank.<br>Every kind of building.</h2>
         </div>
+        <p>Real Houston installs alongside concept settings of the hardware we quote. Tap any image for a closer look.</p>
+      </div>
+      <div class="filter-bar" role="group" aria-label="Filter installations">
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-filter="real" aria-pressed="false">Real installs</button>
+        <button class="filter-btn" data-filter="residential" aria-pressed="false">Apartments</button>
+        <button class="filter-btn" data-filter="restaurant" aria-pressed="false">Restaurants</button>
+        <button class="filter-btn" data-filter="hospitality" aria-pressed="false">Hotels &amp; lobbies</button>
+      </div>
+      <div class="gallery-grid">
+        <button class="gallery-card" data-category="real residential" aria-label="View: parcel locker install at a Houston property">
+          <img src="Pictures/parcel-install.jpg" alt="Smart parcel locker bank installed at a Houston property" loading="lazy">
+          <span class="gallery-tag real">Installed · Houston</span>
+          <div class="gallery-info"><small>Multifamily</small><strong>Parcel bank, in service</strong></div>
+        </button>
+        <button class="gallery-card" data-category="real" aria-label="View: AI smart cooler placed at a Houston property">
+          <img src="vending-install.jpg" alt="AI smart-checkout cooler installed at a Houston property" loading="lazy">
+          <span class="gallery-tag real">Installed · Houston</span>
+          <div class="gallery-info"><small>Property amenity</small><strong>AI cooler, live on site</strong></div>
+        </button>
+        <button class="gallery-card" data-category="residential" aria-label="View: parcel locker with weather canopy, concept setting">
+          <img src="Pictures/Smart-parcel-front01-768x576.webp" alt="Smart parcel locker bank with weather canopy, front view" loading="lazy">
+          <span class="gallery-tag">Concept setting</span>
+          <div class="gallery-info"><small>Outdoor rated</small><strong>Canopy parcel bank</strong></div>
+        </button>
+        <button class="gallery-card" data-category="hospitality" aria-label="View: food locker in a hotel lobby, concept setting">
+          <img src="Pictures/food-locker-hotel-lobby.webp" alt="Pickup Pod food locker in a hotel lobby, concept rendering" loading="lazy">
+          <span class="gallery-tag">Concept setting</span>
+          <div class="gallery-info"><small>Hospitality</small><strong>Lobby pickup, no front-desk pile</strong></div>
+        </button>
+        <button class="gallery-card" data-category="restaurant" aria-label="View: food locker in a restaurant dining room, concept setting">
+          <img src="Pictures/food-locker-restaurant.webp" alt="Pickup Pod food locker in a casual dining room, concept rendering" loading="lazy">
+          <span class="gallery-tag">Concept setting</span>
+          <div class="gallery-info"><small>Restaurants</small><strong>To-go, off the counter</strong></div>
+        </button>
+        <button class="gallery-card" data-category="restaurant" aria-label="View: food locker beside a pizzeria oven, concept setting">
+          <img src="Pictures/food-locker-pizzeria.webp" alt="Pickup Pod locker beside a pizzeria wood-fired oven, concept rendering" loading="lazy">
+          <span class="gallery-tag">Concept setting</span>
+          <div class="gallery-info"><small>Pizza &amp; takeaway</small><strong>Hot orders, waiting hot</strong></div>
+        </button>
+        <button class="gallery-card" data-category="residential" aria-label="View: food locker in an apartment lobby, concept setting">
+          <img src="Pictures/food-locker-apartment-lobby.webp" alt="Pickup Pod locker in an apartment residential lobby, concept rendering" loading="lazy">
+          <span class="gallery-tag">Concept setting</span>
+          <div class="gallery-info"><small>Multifamily</small><strong>Resident lobby pickup</strong></div>
+        </button>
+        <button class="gallery-card" data-category="restaurant" aria-label="View: food locker in a cafe and bakery, concept setting">
+          <img src="Pictures/food-locker-cafe-bakery.webp" alt="Pickup Pod locker in a cafe and bakery, concept rendering" loading="lazy">
+          <span class="gallery-tag">Concept setting</span>
+          <div class="gallery-info"><small>Cafés</small><strong>Morning rush, self-serve</strong></div>
+        </button>
+        <button class="gallery-card" data-category="hospitality" aria-label="View: food locker at an apartment building entry, concept setting">
+          <img src="Pictures/food-locker-building-entry.webp" alt="Pickup Pod locker at an apartment building entry, concept rendering" loading="lazy">
+          <span class="gallery-tag">Concept setting</span>
+          <div class="gallery-info"><small>Building entry</small><strong>Pickup at the door</strong></div>
+        </button>
+      </div>
+      <p class="gallery-note">Images marked "Installed · Houston" are our own installs. Concept settings show the same hardware lines we quote — your placement drawing shows it in <em>your</em> space.</p>
+    </div>
+  </section>
+
+  <!-- SOLUTIONS -->
+  <section class="home-section" id="solutions">
+    <div class="wrap">
+      <div class="section-head">
         <div>
-          <p class="founder-body">Our founder drives for a national carrier. He has watched packages disappear minutes after the delivery photo was taken, and been met at the curb by strangers asking for parcels that weren't theirs. Zen Lockers exists to close that gap: from the driver's hand into locked steel, and only the right code opens the door. That is the whole company — nothing about it is theoretical.</p>
-          <p class="founder-sig">Jay Hughes <span>Founder, Zen Lockers &middot; Houston</span></p>
+          <span class="eyebrow">Who we serve</span>
+          <h2>Built for the property you run.</h2>
+        </div>
+        <p>Three kinds of buildings, one problem: deliveries that need a safe place to wait. Pick yours.</p>
+      </div>
+      <div class="solution-grid">
+        <a class="solution-card" href="parcel-lockers.html">
+          <span class="solution-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 21V6l8-3 8 3v15M8 9h2m4 0h2m-8 4h2m4 0h2m-8 4h2m4 0h2"/></svg></span>
+          <h3>Apartments &amp; multifamily</h3>
+          <p>Carrier-agnostic package lockers for the mail room, lobby, or breezeway. Residents get a code the moment a package lands; the leasing office stops being a package counter.</p>
+          <span class="solution-link">Parcel lockers →</span>
+        </a>
+        <a class="solution-card" href="food-lockers.html">
+          <span class="solution-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 10h18v11H3zM5 10l2-7h10l2 7M8 14h8m-8 3h5"/></svg></span>
+          <h3>Restaurants &amp; food service</h3>
+          <p>To-go and third-party orders wait hot or cold behind a locked door. Drivers and guests grab and go; nobody crowds the counter, nobody takes the wrong bag.</p>
+          <span class="solution-link">Food &amp; restaurant lockers →</span>
+        </a>
+        <a class="solution-card" href="asset-lockers.html">
+          <span class="solution-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 21V4h16v17M8 8h2m4 0h2m-8 4h2m4 0h2m-8 4h2m4 0h2"/></svg></span>
+          <h3>Offices &amp; industrial</h3>
+          <p>Employee deliveries, shared equipment, and controlled hand-offs — each with a code, a timestamp, and a record of who opened what.</p>
+          <span class="solution-link">Workplace lockers →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER BAND -->
+  <div class="feature-band">
+    <div class="wrap">
+      <div class="feature-panel">
+        <div class="feature-content">
+          <span class="eyebrow">From the founder</span>
+          <p class="feature-quote">"I deliver packages for a living. I built Zen Lockers to end what I see <em>at the curb every day.</em>"</p>
+          <p class="feature-body">Our founder drives for a national carrier. He has watched packages disappear minutes after the delivery photo was taken, and been met at the curb by strangers asking for parcels that weren't theirs. Zen Lockers closes that gap: from the driver's hand into locked steel, and only the right code opens the door.</p>
+          <p class="feature-sig">Jay Hughes · Founder, Zen Lockers · Houston</p>
+          <a class="btn-primary" href="about.html">Meet the team →</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Process -->
-  <div class="content-section reveal">
-    <p class="sec-label">How Buying Works</p>
-    <h2 class="sec-title">From quote to first delivery</h2>
-    <p class="sec-body">No sales funnel, no call center. You talk to the person who will be on site for the install.</p>
-    <div class="proc-grid">
-      <div class="proc"><div class="proc-num">STEP 01</div><div class="proc-title">Request a quote</div><div class="proc-desc">Tell us the property type, unit count or daily order volume, and where the lockers would live. We reply within one business day.</div></div>
-      <div class="proc"><div class="proc-num">STEP 02</div><div class="proc-title">Site walk &amp; layout</div><div class="proc-desc">We visit, measure, check power and network, and recommend a door mix and placement. You get a drawing and a fixed price.</div></div>
-      <div class="proc"><div class="proc-num">STEP 03</div><div class="proc-title">Install &amp; setup</div><div class="proc-desc">Hardware is delivered and installed, software configured, and staff and residents onboarded — we stay until the first packages go in.</div></div>
-      <div class="proc"><div class="proc-num">STEP 04</div><div class="proc-title">Local support</div><div class="proc-desc">Service and support from Houston, not a ticket queue. If a door sticks or a screen goes dark, you call us and we come out.</div></div>
-    </div>
-    <p class="proc-note"><b>Typical lead time:</b> confirmed at quote based on configuration and freight. <b>Pricing:</b> hardware, installation, and software are itemized — no bundled mystery numbers.</p>
-  </div>
-
-  <!-- Hardware -->
-  <div class="content-section reveal" style="padding-top:0;">
-    <p class="sec-label">Hardware &amp; Certifications</p>
-    <h2 class="sec-title">Commercial-grade hardware, installed locally</h2>
-    <p class="sec-body">We don't manufacture lockers — we source them from ISO 9001-certified manufacturers, then handle the part that has to happen in Houston: survey, install, software setup, and service. The certifications below belong to the hardware we install.</p>
-    <div class="cert-row">
-      <span class="cert-chip"><b>UL</b> Safety listed</span>
-      <span class="cert-chip"><b>ETL</b> Intertek listed</span>
-      <span class="cert-chip"><b>NSF</b> Food-locker sanitation</span>
-      <span class="cert-chip"><b>CE</b> European conformity</span>
-      <span class="cert-chip"><b>ISO 9001</b> Manufacturer quality system</span>
-      <span class="cert-chip"><b>ADA</b> Compliant layouts available</span>
-      <span class="cert-chip"><b>IP54</b> Outdoor-rated options</span>
-    </div>
-  </div>
-
-  <!-- Team -->
-  <div class="content-section reveal" style="padding-top:0;">
-    <p class="sec-label">Who You'll Work With</p>
-    <h2 class="sec-title">Two people, one standard</h2>
-    <div class="team-grid">
-      <div class="team-card">
-        <p class="team-name">Jay Hughes</p>
-        <p class="team-role">Founder &middot; Operations &amp; Client Partnerships</p>
-        <p class="team-bio">Jay runs the business end to end — quotes, site walks, logistics, and installs — and is the person who answers the phone. He also still delivers packages for a national carrier, which is where the company came from.</p>
-        <a class="team-link" href="mailto:Jay.Hughes@zenlockers.com">Jay.Hughes@zenlockers.com →</a>
+  <!-- PROCESS -->
+  <section class="home-section" id="how" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">How buying works</span>
+          <h2>From quote to first delivery.</h2>
+        </div>
+        <p>No sales funnel, no call center. You talk to the person who will be on site for the install.</p>
       </div>
-      <div class="team-card">
-        <p class="team-name">Craig Knox</p>
-        <p class="team-role">Technical Director &middot; Hardware &amp; Software</p>
-        <p class="team-bio">Craig owns the technical side: locker hardware, software configuration, network and POS integration, and the systems that keep every installation connected and reporting.</p>
-        <a class="team-link" href="mailto:craig.knox@zenlockers.com">craig.knox@zenlockers.com →</a>
+      <div class="process-grid">
+        <article class="step"><span class="step-no">01 / QUOTE</span><h3>Request a quote</h3><p>Tell us the property type, unit count or daily order volume, and where the lockers would live. We reply within one business day.</p></article>
+        <article class="step"><span class="step-no">02 / SITE WALK</span><h3>Measure &amp; plan</h3><p>We visit, measure, check power and network, and recommend a door mix and placement. You get a drawing and a fixed price.</p></article>
+        <article class="step"><span class="step-no">03 / INSTALL</span><h3>Install &amp; onboard</h3><p>Hardware installed, software configured, staff and residents onboarded — we stay until the first packages go in.</p></article>
+        <article class="step"><span class="step-no">04 / SUPPORT</span><h3>Local support</h3><p>Service from Houston, not a ticket queue. If a door sticks or a screen goes dark, you call the people who installed it.</p></article>
       </div>
+      <p class="process-note"><b>Pricing:</b> hardware, installation, and software are itemized — no bundled mystery numbers. <b>Lead time:</b> confirmed at quote based on configuration and freight.</p>
     </div>
-  </div>
+  </section>
 
-  <div class="also">
-    <div class="also-box">
-      <p><b>Also for your property:</b> we place and stock vending machines and run a scheduled valet trash service for multifamily communities — offered to locker clients as add-ons, not the main event.</p>
-      <div class="also-links"><a href="vending.html">Vending →</a><a href="trash-runners.html">Valet trash →</a></div>
-    </div>
-  </div>
-
-  <!-- CTA -->
-  <section class="cta-section reveal">
-    <h2 class="cta-title">Ready to bring smart lockers<br>to your property?</h2>
-    <p class="cta-sub">Send us the basics and you'll have a reply, and usually a site-walk time, within one business day.</p>
-    <div class="cta-btns">
-      <a href="contact.html" class="btn-primary">Request a Quote →</a>
-      <a class="btn-outline" href="how-it-works.html">See How It Works</a>
-    </div>
-    <div class="contact-row">
-      <div class="contact-item"><p class="cl">Email</p><p class="cv">Jay.Hughes@zenlockers.com</p></div>
-      <div class="contact-sep"></div>
-      <div class="contact-item"><p class="cl">Phone</p><p class="cv">832 724 2007</p></div>
-      <div class="contact-sep"></div>
-      <div class="contact-item"><p class="cl">Office</p><p class="cv">3050 Post Oak Blvd, Houston TX 77056</p></div>
+  <!-- FAQ -->
+  <section class="home-section" id="faq" style="padding-top:0;">
+    <div class="wrap faq-layout">
+      <div class="faq-aside">
+        <span class="eyebrow">Good questions</span>
+        <h2>Wondering if lockers fit your property?</h2>
+        <p>Every project starts with a conversation — and a free site walk. If your question isn't here, ask us directly.</p>
+        <a class="btn-primary" href="contact.html">Request a Quote →</a>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Which carriers can deliver into the lockers?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-answer"><p>All of them. The parcel lockers are carrier-agnostic — FedEx, UPS, Amazon, USPS, and food couriers all deliver into the same bank. The recipient gets a one-time code or QR the moment their delivery is placed.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">What happens with oversize packages?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-answer"><p>Lockers have size limits, so we plan for it: the door mix we recommend at the site walk includes oversize doors sized to your delivery volume, and anything that still won't fit follows the drop-off policy you choose — door, office, or desk.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">What does the property need to provide?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-answer"><p>A standard 120V outlet and a network connection — ethernet, Wi-Fi, or cellular all work. We verify power, network, and clearances during the free site walk before you commit to anything.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Who services the lockers after install?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-answer"><p>We do — from Houston. There's no national call center in the middle: if a door sticks or a screen goes dark, you call the same people who did the install and we come out.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Do you only do lockers?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-answer"><p>Lockers are the main event. For properties we already serve, we also place and stock vending machines and run a scheduled valet trash service — one local team for all three.</p></div>
+        </div>
+      </div>
     </div>
   </section>
 </div>
@@ -429,7 +454,7 @@
 <div class="footer-main">
 <div class="footer-brand">
 <div class="footer-logo"><svg width="28" height="36" viewBox="0 0 28 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="0" width="24" height="34" rx="2" fill="none" stroke="#00C4A1" stroke-width="1.5"/><rect x="5" y="3" width="7" height="6" rx="1" fill="rgba(0,196,161,0.8)"/><rect x="15" y="3" width="7" height="6" rx="1" fill="rgba(0,196,161,0.5)"/><rect x="5" y="12" width="7" height="6" rx="1" fill="rgba(0,196,161,0.5)"/><rect x="15" y="12" width="7" height="6" rx="1" fill="rgba(0,196,161,0.3)"/><rect x="5" y="21" width="17" height="4" rx="1" fill="rgba(0,196,161,0.25)"/><rect x="5" y="28" width="17" height="3" rx="1" fill="rgba(0,196,161,0.15)"/></svg></div>
-<div style="margin-top:10px;"><div style="font-family:'Fraunces',serif;font-size:21px;font-weight:600;letter-spacing:0.06em;color:#F5F2EA;">ZEN <span style="color:#00C4A1;">LOCKERS</span></div><div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:0.18em;color:rgba(245,242,234,0.4);margin-top:3px;">PACKAGE PICKUP, PEACE OF MIND</div></div>
+<div style="margin-top:10px;"><div style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.03em;color:#F5F2EA;">ZEN <span style="color:#00C4A1;">LOCKERS</span></div><div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:0.18em;color:rgba(245,242,234,0.4);margin-top:3px;">PACKAGE PICKUP, PEACE OF MIND</div></div>
 <p class="footer-tagline">Smart parcel and food lockers for Houston properties &mdash; quoted, installed, and supported locally.</p>
 <div class="footer-social"><a href="mailto:Jay.Hughes@zenlockers.com" title="Email">@</a><a href="tel:8327242007" title="Call">&#9742;</a></div>
 </div>
@@ -446,6 +471,11 @@
 </div>
 </footer>
 
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+  <button class="lightbox-close" aria-label="Close image preview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+  <img alt="">
+</div>
+
 <script>
 // Legacy deep links from the old single-page site → real pages
 (function(){
@@ -453,12 +483,52 @@
   var h = (location.hash || '').replace('#','');
   if(map[h]) location.replace(map[h]);
 })();
-(function(){
-  var observer = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
-  }, {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
-})();
+
+// Gallery filters
+document.querySelectorAll('.filter-btn').forEach(function(button){
+  button.addEventListener('click', function(){
+    document.querySelectorAll('.filter-btn').forEach(function(btn){
+      btn.classList.toggle('active', btn === button);
+      btn.setAttribute('aria-pressed', btn === button ? 'true' : 'false');
+    });
+    var filter = button.dataset.filter;
+    document.querySelectorAll('.gallery-card').forEach(function(card){
+      card.hidden = filter !== 'all' && card.dataset.category.split(' ').indexOf(filter) === -1;
+    });
+  });
+});
+
+// Lightbox
+var lightbox = document.getElementById('lightbox');
+function closeLightbox(){ lightbox.classList.remove('open'); document.body.style.overflow = ''; }
+document.querySelectorAll('.gallery-card').forEach(function(card){
+  card.addEventListener('click', function(){
+    var img = card.querySelector('img');
+    lightbox.querySelector('img').src = img.src;
+    lightbox.querySelector('img').alt = img.alt;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+});
+lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', function(e){ if(e.target === lightbox) closeLightbox(); });
+
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(function(button){
+  button.addEventListener('click', function(){
+    var wasOpen = button.getAttribute('aria-expanded') === 'true';
+    document.querySelectorAll('.faq-question').forEach(function(item){
+      item.setAttribute('aria-expanded', 'false');
+      item.nextElementSibling.style.maxHeight = null;
+    });
+    if(!wasOpen){
+      button.setAttribute('aria-expanded', 'true');
+      button.nextElementSibling.style.maxHeight = button.nextElementSibling.scrollHeight + 'px';
+    }
+  });
+});
+
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLightbox(); });
 </script>
 </body>
 </html>
