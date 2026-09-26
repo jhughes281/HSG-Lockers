@@ -53,6 +53,16 @@
 .hero-photo{position:relative;border-radius:2px;overflow:hidden;border:1px solid rgba(0,196,161,0.25);box-shadow:0 30px 80px rgba(0,0,0,.5);}
 .hero-photo img{width:100%;display:block;}
 .hero-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:12px 16px;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.75);background:linear-gradient(to top,rgba(13,27,46,0.9),rgba(13,27,46,0));}
+.hero-collage{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.hero-collage .hero-photo{margin:0;}
+.hero-collage .hc-main{grid-column:1/-1;}
+.hero-collage .hc-sm img{height:148px;object-fit:cover;}
+.hero-collage .hc-sm figcaption{padding:8px 12px;font-size:9.5px;}
+@keyframes heroIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+.hero-collage .hc-main{animation:heroIn .7s ease .1s both;}
+.hero-collage .hc-sm:nth-child(2){animation:heroIn .7s ease .32s both;}
+.hero-collage .hc-sm:nth-child(3){animation:heroIn .7s ease .48s both;}
+@media (prefers-reduced-motion:reduce){.hero-collage .hc-main,.hero-collage .hc-sm:nth-child(2),.hero-collage .hc-sm:nth-child(3){animation:none;}}
 /* ── fact strip ── */
 .fact-strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--navy-mid);}
 .fact-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);}
@@ -199,10 +209,20 @@
           <a class="btn-outline" href="tel:8327242007">Talk to Jay &middot; 832 724 2007</a>
         </div>
       </div>
-      <figure class="hero-photo">
-        <img src="Pictures/Smart-parcel-scene01-768x576.webp" alt="Outdoor smart parcel locker bank with weather canopy outside an apartment community" width="768" height="576">
-        <figcaption>Outdoor parcel locker bank with weather canopy &mdash; the hardware we quote, install, and service</figcaption>
-      </figure>
+      <div class="hero-collage">
+        <figure class="hero-photo hc-main">
+          <img src="Pictures/Smart-parcel-scene01-768x576.webp" alt="Outdoor smart parcel locker bank with weather canopy outside an apartment community" width="768" height="576">
+          <figcaption>Outdoor parcel locker bank with weather canopy &mdash; the hardware we quote, install, and service</figcaption>
+        </figure>
+        <figure class="hero-photo hc-sm">
+          <img src="Pictures/food-locker-hotel-lobby.webp" alt="Concept rendering of a Pickup Pod food locker in a hotel lobby" width="457" height="327" loading="lazy">
+          <figcaption>Lobby &amp; hotel settings</figcaption>
+        </figure>
+        <figure class="hero-photo hc-sm">
+          <img src="Pictures/food-locker-restaurant.webp" alt="Concept rendering of a Pickup Pod food locker in a restaurant dining room" width="457" height="327" loading="lazy">
+          <figcaption>Restaurant pickup</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
