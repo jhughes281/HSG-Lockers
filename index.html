@@ -59,9 +59,15 @@
 /* ── the locker face (signature) ── */
 .locker-face{position:relative;}
 .lf-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:104px;gap:5px;}
-.lf-door{position:relative;background:var(--card);border:1px solid var(--line);border-radius:3px;}
-.lf-num{position:absolute;top:7px;left:9px;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:0.08em;color:var(--slate);}
-.lf-key{position:absolute;bottom:9px;right:9px;width:10px;height:14px;}
+.lf-door{position:relative;background:var(--card);border:1px solid #CFC7B4;border-radius:3px;box-shadow:inset 0 -2px 0 rgba(18,34,47,0.06);}
+.lf-door::before{content:'';position:absolute;inset:8px;border:1px solid var(--line);border-radius:2px;pointer-events:none;}
+.lf-door::after{content:'';position:absolute;top:50%;left:6px;transform:translateY(-50%);width:2px;height:22px;border-radius:2px;background:var(--line);}
+.lf-num{position:absolute;top:12px;left:14px;font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:600;letter-spacing:0.08em;color:var(--slate);z-index:1;}
+.lf-key{position:absolute;bottom:13px;right:13px;width:10px;height:14px;z-index:1;}
+.lf-patina::before{border-color:rgba(253,252,248,0.25);}
+.lf-patina::after,.lf-ink::after,.lf-brass::after{background:rgba(18,34,47,0.18);}
+.lf-ink::before{border-color:rgba(245,242,234,0.15);}
+.lf-brass::before{border-color:rgba(18,34,47,0.12);}
 .lf-photo{position:relative;border-radius:3px;overflow:hidden;border:1px solid var(--ink);box-shadow:0 10px 26px rgba(18,34,47,0.16);}
 .lf-photo img{width:100%;height:100%;object-fit:cover;display:block;}
 .lf-main{grid-column:2/4;grid-row:1/3;}
@@ -250,14 +256,14 @@
         <div class="lf-grid">
           <div class="lf-door"><span class="lf-num">01</span><svg class="lf-key" viewBox="0 0 10 14" aria-hidden="true"><circle cx="5" cy="4" r="3.4" fill="none" stroke="#5A6672" stroke-width="1.4"/><path d="M3.6 7 L6.4 7 L7.4 13 L2.6 13 Z" fill="#5A6672"/></svg></div>
           <figure class="lf-photo lf-main"><img src="Pictures/Smart-parcel-scene01-768x576.webp" alt="Outdoor smart parcel locker bank with weather canopy outside an apartment community" width="768" height="576"></figure>
-          <div class="lf-door"><span class="lf-num">02</span></div>
+          <div class="lf-door"><span class="lf-num">02</span><svg class="lf-key" viewBox="0 0 10 14" aria-hidden="true"><circle cx="5" cy="4" r="3.4" fill="none" stroke="#5A6672" stroke-width="1.4"/><path d="M3.6 7 L6.4 7 L7.4 13 L2.6 13 Z" fill="#5A6672"/></svg></div>
           <div class="lf-door lf-patina"><span class="lf-num">03</span><svg class="lf-key" viewBox="0 0 10 14" aria-hidden="true"><circle cx="5" cy="4" r="3.4" fill="none" stroke="#FDFCF8" stroke-width="1.4"/><path d="M3.6 7 L6.4 7 L7.4 13 L2.6 13 Z" fill="#FDFCF8"/></svg></div>
-          <div class="lf-door"><span class="lf-num">04</span></div>
+          <div class="lf-door"><span class="lf-num">04</span><svg class="lf-key" viewBox="0 0 10 14" aria-hidden="true"><circle cx="5" cy="4" r="3.4" fill="none" stroke="#5A6672" stroke-width="1.4"/><path d="M3.6 7 L6.4 7 L7.4 13 L2.6 13 Z" fill="#5A6672"/></svg></div>
           <figure class="lf-photo lf-hotel"><img src="Pictures/food-locker-hotel-lobby.webp" alt="Concept rendering of a Pickup Pod food locker in a hotel lobby" width="457" height="327" loading="lazy"></figure>
           <div class="lf-door lf-ink"><span>CODE&nbsp;4482</span></div>
-          <div class="lf-door"><span class="lf-num">05</span></div>
+          <div class="lf-door"><span class="lf-num">05</span><svg class="lf-key" viewBox="0 0 10 14" aria-hidden="true"><circle cx="5" cy="4" r="3.4" fill="none" stroke="#5A6672" stroke-width="1.4"/><path d="M3.6 7 L6.4 7 L7.4 13 L2.6 13 Z" fill="#5A6672"/></svg></div>
           <div class="lf-door"><span class="lf-num">06</span><svg class="lf-key" viewBox="0 0 10 14" aria-hidden="true"><circle cx="5" cy="4" r="3.4" fill="none" stroke="#5A6672" stroke-width="1.4"/><path d="M3.6 7 L6.4 7 L7.4 13 L2.6 13 Z" fill="#5A6672"/></svg></div>
-          <div class="lf-door lf-brass"><span class="lf-num">07</span></div>
+          <div class="lf-door lf-brass"><span class="lf-num">07</span><svg class="lf-key" viewBox="0 0 10 14" aria-hidden="true"><circle cx="5" cy="4" r="3.4" fill="none" stroke="#12222F" stroke-width="1.4"/><path d="M3.6 7 L6.4 7 L7.4 13 L2.6 13 Z" fill="#12222F"/></svg></div>
           <figure class="lf-photo lf-rest"><img src="Pictures/food-locker-restaurant.webp" alt="Concept rendering of a Pickup Pod food locker in a restaurant dining room" width="457" height="327" loading="lazy"></figure>
         </div>
         <div class="lf-plinth" aria-hidden="true"></div>
