@@ -25,6 +25,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://zenlockers.com/charging-lockers.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://zenlockers.com/vending.html</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
