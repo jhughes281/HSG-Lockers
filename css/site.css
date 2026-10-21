@@ -313,3 +313,18 @@ body{font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
 .contact-form-wrap input,.contact-form-wrap select,.contact-form-wrap textarea{font-family:'Inter Tight',system-ui,sans-serif;}
 .contact-form-wrap input:focus-visible,.contact-form-wrap select:focus-visible,.contact-form-wrap textarea:focus-visible{outline:2px solid var(--patina);outline-offset:1px;}
 @media(prefers-reduced-motion:reduce){.btn-primary,.btn-outline,.nav-cta,.cf-submit,.filter-btn,.faq-question,.accordion-header{transition:none;}}
+
+/* Typography refresh: one understated corporate type family, no layout changes. */
+body,button,input,select,textarea,
+.nav-link,.mobile-menu .mm-link,.filter-btn,
+.nav-logo-text,.nav-logo-sub,.footer-col h4,.footer-copy,
+.sec-label,.eyebrow,.hero-eyebrow,.trust-label,.trust-items span,
+.section-head h2,.hero h1,.solution-card h3,.step h3,
+.faq-question,.cta-title,.cert-name,.cert-desc,
+.contact-item .cl,.contact-item .cv,.feature-quote,.feature-sig{
+  font-family:'Inter',Arial,Helvetica,sans-serif;
+}
+.nav-logo-sub,.sec-label,.eyebrow,.hero-eyebrow,.trust-label,
+.footer-col h4,.cert-desc,.contact-item .cl{letter-spacing:.075em;}
+.hero h1,.section-head h2,.sec-title,.cta-title{letter-spacing:-.035em;}
+.nav-link{font-weight:500;}
