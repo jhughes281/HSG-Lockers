@@ -11,7 +11,7 @@
 <meta property="og:description" content="Request a free consultation and custom quote for smart lockers, vending, or valet trash service at your Houston property.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://zenlockers.com/contact.html">
-<meta property="og:image" content="https://zenlockers.com/Pictures/parcel-install.jpg">
+<meta property="og:image" content="https://www.alfa3.eu/editor/image/banner_pool/22/sestava-amsterdam-alfabox-prime-flex-lite-2-2_filename_22.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Inter+Tight:wght@400;450;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/site.css?v=daylight2">
@@ -60,10 +60,11 @@
     <div class="nav-item">
       <a class="nav-link" href="parcel-lockers.html" data-nav="lockers">Lockers <span class="arrow">▾</span></a>
       <div class="dropdown">
-        <a class="dropdown-item" href="parcel-lockers.html"><span class="dropdown-dot"></span>Parcel Lockers</a>
+        <a class="dropdown-item" href="parcel-lockers.html"><span class="dropdown-dot"></span>Outdoor Parcel Lockers</a>
+        <a class="dropdown-item" href="indoor-delivery-boxes.html"><span class="dropdown-dot"></span>Indoor Delivery Boxes</a>
+        <a class="dropdown-item" href="key-boxes.html"><span class="dropdown-dot"></span>Smart Key Boxes</a>
+        <a class="dropdown-item" href="wardrobe-lockers.html"><span class="dropdown-dot"></span>Smart Wardrobe Lockers</a>
         <a class="dropdown-item" href="food-lockers.html"><span class="dropdown-dot"></span>Food &amp; Restaurant Lockers</a>
-        <a class="dropdown-item" href="asset-lockers.html"><span class="dropdown-dot"></span>Asset &amp; Tool Lockers</a>
-        <a class="dropdown-item" href="charging-lockers.html"><span class="dropdown-dot"></span>Smart Charging Lockers</a>
       </div>
     </div>
     <div class="nav-item">
@@ -88,7 +89,10 @@
   <a href="contact.html" class="nav-cta">Request a Quote</a>
   <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   <div class="mobile-menu" id="mobileMenu">
-    <a class="mm-link" href="parcel-lockers.html">Parcel Lockers</a>
+    <a class="mm-link" href="parcel-lockers.html">Outdoor Parcel Lockers</a>
+    <a class="mm-link" href="indoor-delivery-boxes.html">Indoor Delivery Boxes</a>
+    <a class="mm-link" href="key-boxes.html">Smart Key Boxes</a>
+    <a class="mm-link" href="wardrobe-lockers.html">Smart Wardrobe Lockers</a>
     <a class="mm-link" href="food-lockers.html">Food &amp; Restaurant Lockers</a>
     <a class="mm-link" href="vending.html">Vending &amp; Valet Trash</a>
     <a class="mm-link" href="markets.html">Who We Serve</a>
@@ -120,6 +124,13 @@
 .cf-group textarea{height:90px;resize:vertical;}
 .cf-submit{width:100%;padding:13px;background:#0E7A66;color:#FDFCF8;border:none;border-radius:8px;font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;margin-top:4px;}
 .cf-submit:hover{background:#0B6152;}
+.cf-submit:disabled{opacity:.6;cursor:wait;}
+.req{color:#A94438;}
+.cf-products{border:1px solid #DAD3C2;border-radius:8px;padding:12px 14px 6px;}
+.cf-products legend{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#5A6672;padding:0 6px;}
+.cf-products label{display:flex;align-items:center;gap:9px;font-size:14px;color:#12222F;margin:0 0 8px;text-transform:none;letter-spacing:0;cursor:pointer;}
+.cf-group .cf-products input,.cf-products input[type=checkbox]{width:auto;margin:0;accent-color:#0E7A66;}
+.cf-group input[aria-invalid=true],.cf-group textarea[aria-invalid=true]{border-color:#A94438;}
 .cf-status{display:none;margin-top:14px;padding:12px 16px;border-radius:8px;font-size:14px;line-height:1.5;}
 .cf-status.ok{display:block;background:rgba(14,122,102,0.08);border:1px solid rgba(14,122,102,0.35);color:#0E7A66;}
 .cf-status.err{display:block;background:rgba(169,68,56,0.08);border:1px solid rgba(169,68,56,0.4);color:#A94438;}
@@ -138,18 +149,28 @@
 <div class="contact-form-wrap">
 <h3>Request a Quote</h3>
 <form id="quoteForm" novalidate>
-<div class="cf-row"><div class="cf-group"><label>First Name</label><input type="text" name="first_name" placeholder="Your first name"/></div><div class="cf-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Your last name"/></div></div>
-<div class="cf-group"><label>Email Address</label><input type="email" name="email" required placeholder="you@company.com"/></div>
-<div class="cf-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="832 000 0000"/></div>
-<div class="cf-group"><label>Property Type</label><select name="property_type"><option value="">Select your market...</option><option>Apartments / Multifamily</option><option>Restaurant / Food Service</option><option>Office / Industrial</option><option>College / University / School</option><option>Investor / Partnership inquiry</option><option>Other</option></select></div>
-<div class="cf-group"><label>Size <span style="opacity:.5;font-weight:300;text-transform:none;letter-spacing:0">(units, doors, or daily orders — optional)</span></label><input type="text" name="size" placeholder="e.g. 240 units, or ~80 to-go orders/day"/></div>
-<div class="cf-group"><label>Message</label><textarea name="message" placeholder="Where would the lockers go, and what problem are you trying to solve?"></textarea></div>
+<div class="cf-row"><div class="cf-group"><label for="cf-first">First Name <span class="req" aria-hidden="true">*</span></label><input id="cf-first" type="text" name="first_name" required autocomplete="given-name" placeholder="Your first name"/></div><div class="cf-group"><label for="cf-last">Last Name</label><input id="cf-last" type="text" name="last_name" autocomplete="family-name" placeholder="Your last name"/></div></div>
+<div class="cf-group"><label for="cf-company">Company or Property</label><input id="cf-company" type="text" name="company" autocomplete="organization" placeholder="e.g. The Residences at Post Oak"/></div>
+<div class="cf-group"><label for="cf-email">Email Address <span class="req" aria-hidden="true">*</span></label><input id="cf-email" type="email" name="email" required autocomplete="email" placeholder="you@company.com"/></div>
+<div class="cf-group"><label for="cf-phone">Phone Number</label><input id="cf-phone" type="tel" name="phone" autocomplete="tel" placeholder="832 000 0000"/></div>
+<div class="cf-group"><label for="cf-type">Property Type</label><select id="cf-type" name="property_type"><option value="">Select your market...</option><option>Apartments / Multifamily</option><option>Office / Corporate</option><option>Industrial / Warehouse</option><option>Auto Service / Rental / Fleet</option><option>Restaurant / Food Service</option><option>College / University / School</option><option>Investor / Partnership inquiry</option><option>Other</option></select></div>
+<fieldset class="cf-group cf-products"><legend>Interested in <span style="opacity:.6;text-transform:none;letter-spacing:0">(check all that apply)</span></legend>
+<label><input type="checkbox" name="interest_outdoor_parcel" value="yes"/> Outdoor parcel lockers</label>
+<label><input type="checkbox" name="interest_indoor_delivery" value="yes"/> Indoor delivery boxes</label>
+<label><input type="checkbox" name="interest_key_boxes" value="yes"/> Smart key boxes</label>
+<label><input type="checkbox" name="interest_wardrobe" value="yes"/> Smart wardrobe lockers</label>
+<label><input type="checkbox" name="interest_food" value="yes"/> Food &amp; restaurant lockers</label>
+<label><input type="checkbox" name="interest_vending" value="yes"/> Vending</label>
+<label><input type="checkbox" name="enterprise_badge" value="yes"/> RFID badge integration &amp; cloud access control</label>
+</fieldset>
+<div class="cf-group"><label for="cf-size">Size <span style="opacity:.5;font-weight:300;text-transform:none;letter-spacing:0">(units, doors, staff, or daily orders, optional)</span></label><input id="cf-size" type="text" name="size" placeholder="e.g. 240 units, or ~80 to-go orders/day"/></div>
+<div class="cf-group"><label for="cf-msg">Message <span class="req" aria-hidden="true">*</span></label><textarea id="cf-msg" name="message" required minlength="10" placeholder="Where would the equipment go, and what problem are you trying to solve?"></textarea></div>
 <input type="hidden" name="access_key" value="dc651836-17c9-4637-9c58-2e515132b534"/>
 <input type="hidden" name="subject" value="New quote request — Zen Lockers website"/>
 <input type="hidden" name="from_name" value="Zen Lockers Website"/>
-<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none !important;"/>
+<input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none !important;"/>
 <button type="submit" class="cf-submit">Request a Quote &#8594;</button>
-<p style="font-size:12px;color:#5A6672;margin-top:10px;line-height:1.6;">Reply within one business day. Vendor documents (W-9, COI) available on request.</p>
+<p style="font-size:12px;color:#5A6672;margin-top:10px;line-height:1.6;"><span class="req">*</span> Required. Reply within one business day. Vendor documents (W-9, COI) available on request.</p>
 <p id="cfStatus" class="cf-status" role="status" aria-live="polite"></p>
 </form>
 <script>
@@ -167,8 +188,18 @@
     e.preventDefault();
     var data = new FormData(form);
     var name = ((data.get('first_name')||'') + ' ' + (data.get('last_name')||'')).trim();
-    var email = (data.get('email')||'').trim();
-    if(!email || email.indexOf('@') === -1){ show('Please enter a valid email so we can reply.', false); return; }
+    var bad = null;
+    form.querySelectorAll('[required]').forEach(function(el){
+      var ok = el.checkValidity(); el.setAttribute('aria-invalid', ok ? 'false' : 'true');
+      if(!ok && !bad) bad = el;
+    });
+    if(bad){
+      var lbl = form.querySelector('label[for="' + bad.id + '"]');
+      var nm = lbl ? lbl.textContent.replace('*','').trim() : 'this field';
+      show(bad.type === 'email' ? 'Please enter a valid email so we can reply.' : 'Please fill in ' + nm + '.', false);
+      bad.focus(); return;
+    }
+    if(form.querySelector('[name="botcheck"]').checked) return;
 
     var key = (data.get('access_key')||'').trim();
     var configured = key.length > 0;
@@ -199,11 +230,11 @@
 <div class="footer-brand">
 <div class="footer-logo"><svg width="28" height="36" viewBox="0 0 28 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="0" width="24" height="34" rx="2" fill="none" stroke="#00C4A1" stroke-width="1.5"/><rect x="5" y="3" width="7" height="6" rx="1" fill="#0E7A66"/><rect x="15" y="3" width="7" height="6" rx="1" fill="rgba(14,122,102,0.35)"/><rect x="5" y="12" width="7" height="6" rx="1" fill="rgba(14,122,102,0.35)"/><rect x="15" y="12" width="7" height="6" rx="1" fill="rgba(14,122,102,0.35)"/><rect x="5" y="21" width="17" height="4" rx="1" fill="rgba(14,122,102,0.35)"/><rect x="5" y="28" width="17" height="3" rx="1" fill="rgba(14,122,102,0.08)"/></svg></div>
 <div style="margin-top:10px;"><div style="font-family:'Manrope',sans-serif;font-size:21px;font-weight:600;letter-spacing:0.06em;color:#F5F2EA;">ZEN <span style="color:#00C4A1;">LOCKERS</span></div><div style="font-size:9px;letter-spacing:0.2em;color:#5A6672;margin-top:2px;">PACKAGE PICKUP, PEACE OF MIND</div></div>
-<p class="footer-tagline">Smart parcel and food lockers for Houston properties &mdash; quoted, installed, and supported locally.</p>
+<p class="footer-tagline">Smart parcel lockers and property equipment for Houston &mdash; quoted, installed, and supported locally.</p>
 <div class="footer-social"><a href="mailto:Jay.Hughes@zenlockers.com" title="Email">@</a><a href="tel:8327242007" title="Call">&#9742;</a><a href="https://www.linkedin.com/in/jayhughes-zenlockers/" title="LinkedIn" target="_blank" rel="noopener">in</a><a href="https://www.instagram.com/zenlockers/" title="Instagram" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.8" cy="6.2" r="1.3" fill="currentColor" stroke="none"/></svg></a></div>
 </div>
 <div class="footer-cols">
-<div class="footer-col"><h4>Lockers</h4><ul><li><a href="parcel-lockers.html">Parcel Lockers</a></li><li><a href="food-lockers.html">Food &amp; Restaurant Lockers</a></li><li><a href="asset-lockers.html">Asset &amp; Tool Lockers</a></li><li><a href="charging-lockers.html">Smart Charging Lockers</a></li></ul></div>
+<div class="footer-col"><h4>Lockers</h4><ul><li><a href="parcel-lockers.html">Outdoor Parcel Lockers</a></li><li><a href="indoor-delivery-boxes.html">Indoor Delivery Boxes</a></li><li><a href="key-boxes.html">Smart Key Boxes</a></li><li><a href="wardrobe-lockers.html">Smart Wardrobe Lockers</a></li><li><a href="food-lockers.html">Food &amp; Restaurant Lockers</a></li></ul></div>
 <div class="footer-col"><h4>Who We Serve</h4><ul><li><a href="markets.html#multifamily">Apartments &amp; Multifamily</a></li><li><a href="markets.html#food">Restaurants &amp; Food Service</a></li><li><a href="markets.html#corporate">Offices &amp; Industrial</a></li></ul></div>
 <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Zen Lockers</a></li><li><a href="how-it-works.html">How It Works</a></li><li><a href="vending.html">Vending Placement</a></li><li><a href="trash-runners.html">Valet Trash Service</a></li><li><a href="contact.html">Request a Quote</a></li></ul></div>
 <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:Jay.Hughes@zenlockers.com">Jay.Hughes@zenlockers.com</a></li><li><a href="tel:8327242007">832 724 2007</a></li><li><span>3050 Post Oak Blvd, Suite 510-U60<br>Houston, TX 77056</span></li></ul></div>
