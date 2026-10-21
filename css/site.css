@@ -269,3 +269,35 @@ footer{background:var(--ink);padding:56px 60px 30px;}
 a.tab-btn{text-decoration:none;display:inline-flex;align-items:center;}
 a.btn-primary,a.btn-outline{text-decoration:none;display:inline-flex;}
 a.market-link{text-decoration:none;display:inline-block;}
+
+
+/* ── Corporate polish, October 2026 ──
+   Presentation-only refinements. Preserve existing layout, content,
+   grids, breakpoints, navigation and interactions. */
+:root{
+  --paper:#F7F8F6;
+  --card:#FFFFFF;
+  --ink:#182B39;
+  --slate:#536473;
+  --patina:#176C5D;
+  --signal:#76D0BA;
+  --line:#DEE4E2;
+  --tint:#F0F3F1;
+  --sage:#EAF0EC;
+}
+body{font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+.nav-logo-text{letter-spacing:-.035em;}
+.nav-link{font-weight:550;letter-spacing:0;}
+.nav-cta,.btn-primary,.btn-outline{font-weight:700;letter-spacing:0.005em;}
+.dropdown{box-shadow:0 12px 28px rgba(18,34,47,.075);}
+.content-section .sec-title,.cta-title{letter-spacing:-.035em;}
+.solution-card,.market-card,.img-card,.gallery-card{box-shadow:none;}
+.solution-card:hover{transform:translateY(-2px);box-shadow:0 7px 20px rgba(18,34,47,.07);}
+.gallery-card:hover img{transform:scale(1.018);}
+.footer-col h4{letter-spacing:.09em;}
+.footer-social a{border-radius:8px;}
+.reveal{transition:opacity .32s ease,transform .32s ease;}
+@media(prefers-reduced-motion:reduce){
+  .solution-card:hover{transform:none;}
+  .gallery-card:hover img{transform:none;}
+}
