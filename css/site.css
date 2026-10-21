@@ -301,3 +301,15 @@ body{font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
   .solution-card:hover{transform:none;}
   .gallery-card:hover img{transform:none;}
 }
+
+/* Consistent, restrained UI treatments across existing page templates. */
+.btn-primary,.btn-outline,.nav-cta,.cf-submit{border-radius:7px;transition:background-color .18s ease,border-color .18s ease,color .18s ease,box-shadow .18s ease;}
+.btn-primary:hover,.nav-cta:hover,.cf-submit:hover{box-shadow:0 5px 14px rgba(15,71,61,.12);}
+.solution-card,.model-card,.buy-item,.contact-form-wrap,.accordion,.gallery-card{border-color:var(--line);}
+.solution-card,.model-card,.buy-item,.contact-form-wrap{background:var(--card);}
+.gallery-tag,.filter-btn{letter-spacing:.045em;}
+.filter-btn{transition:background-color .18s ease,color .18s ease,border-color .18s ease;}
+.faq-question,.accordion-header{transition:background-color .18s ease;}
+.contact-form-wrap input,.contact-form-wrap select,.contact-form-wrap textarea{font-family:'Inter Tight',system-ui,sans-serif;}
+.contact-form-wrap input:focus-visible,.contact-form-wrap select:focus-visible,.contact-form-wrap textarea:focus-visible{outline:2px solid var(--patina);outline-offset:1px;}
+@media(prefers-reduced-motion:reduce){.btn-primary,.btn-outline,.nav-cta,.cf-submit,.filter-btn,.faq-question,.accordion-header{transition:none;}}
