@@ -75,6 +75,13 @@
 .buy-item p{margin:0;font-size:13.5px;line-height:1.65;color:var(--slate);}
 @media(max-width:600px){.buy-grid{grid-template-columns:1fr;}}
 </style>
+<style>
+.brand-split{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;align-items:center;}
+.brand-split figure{margin:0;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:var(--tint);}
+.brand-split img{display:block;width:100%;height:auto;}
+.brand-note{font-size:12px;color:var(--slate);margin-top:12px;line-height:1.6;}
+@media(max-width:900px){.brand-split{grid-template-columns:1fr;}}
+</style>
 </head>
 <body>
 <nav>
@@ -297,6 +304,16 @@
 
 
   <div class="content-section" style="padding-top:0;">
+      <div class="divider" style="margin:48px 0 40px;width:100%;"></div>
+      <div class="brand-split">
+        <figure><img src="Pictures/brand/vending-retail.webp" alt="Concept rendering of a Zen Lockers branded vending machine with pickup lockers" width="517" height="446" loading="lazy"></figure>
+        <div>
+          <p class="sec-label">Branded for your site</p>
+          <h2 class="sec-title" style="font-size:clamp(24px,3vw,34px);">Snacks, drinks, and essentials, <em>on brand</em></h2>
+          <p class="sec-body">Pair a stocked vending machine with pickup lockers for residents, members, or employees. Snacks, beverages, PPE, and everyday essentials are available any time, with tap-to-pay checkout.</p>
+          <p class="brand-note">Concept rendering. Exact cabinet, colors, wrap, and screen branding vary by model and are confirmed in your quote.</p>
+        </div>
+      </div>
       <div class="divider" style="margin:48px 0 40px;width:100%;"></div>
       <p class="sec-label">Before Placement</p>
       <h2 class="sec-title" style="font-size:clamp(26px,3.4vw,38px);">What we agree <em>in writing</em></h2>
